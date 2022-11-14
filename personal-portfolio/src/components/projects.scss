@@ -1,0 +1,133 @@
+
+#about_projects{
+  position: relative;
+  top:50%;
+  
+}
+
+
+#projects-header{background: rgb(106, 34, 195);
+  background: linear-gradient(
+    14deg,
+    rgba(106, 34, 195, 1) 0%,
+    rgba(45, 210, 253, 1) 100%
+  );
+  height: 60px;
+  width: 100%;
+  text-align: center;
+ 
+  h2{
+    font-size: 2rem;
+    margin:5px 0px;
+  }
+}
+
+
+#projects { 
+  height: auto;
+  width: 100%;
+  .code {
+    color:black;  
+    visibility: hidden;
+    font-size: 1.1em;
+    font-weight: 700;
+    pointer-events: none;
+  }
+
+  #project-name {
+    text-align: center;
+    background: rgb(227, 226, 226);
+    border-radius: 5px;
+    padding: 1px;
+    width: 100%;
+    #name_link {
+      width: 100%;
+      font-family: "Share Tech Mono";
+      font-weight: 600;
+      font-size: 1.1em;
+      color: rgb(4, 4, 4);
+      text-decoration: none;
+    }
+  }
+}
+
+#projects-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  #project_list {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 300px;
+    margin: 10px;
+    padding: 5px;
+    list-style: none;
+    text-align: center;
+   //border: 2px solid red;
+  }
+}
+
+#project_container {
+  width: 330px;
+  position: relative;
+ // border: 2px solid rgb(69, 36, 200);
+}
+
+ .img_anchor{
+  display:inline-block;
+  text-decoration: none;
+ // border: 2px solid rgb(0, 94, 226);
+}
+
+#project_img {
+  transition: 0.3s ease ;
+  width: 310px;
+  height: 205px; 
+  border-radius: 10px;
+}
+
+
+#overlay{ 
+  transition: 0.3s ease ;
+  width: 320px;
+  height: 215px;
+  opacity: 0;
+  position: absolute;
+  top:0px;
+  right:0px;
+  bottom: 0px; 
+  left:4px; 
+  background: rgba(41, 40, 40, 0.866);
+  border-radius: 10px;
+  padding: 10px;
+  ul{
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  li{
+    text-align: left;
+    color:white;
+    font-size: 1.2rem;
+  }
+  }
+  
+}
+
+
+
+#project_list :hover .code {
+  visibility: visible;
+}
+
+#project_list :hover #project_img {
+  width: 320px;
+  height: 215px;
+}
+
+#project_container:hover #overlay{
+ opacity: 0.9; 
+}

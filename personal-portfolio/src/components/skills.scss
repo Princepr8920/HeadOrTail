@@ -1,0 +1,73 @@
+#skills {
+  user-select: none;
+  width: 96%;
+  // border: 2px solid red;
+  position: relative;
+  left: 30px;
+  padding: 20px;
+   h2 {
+  font-size: 4em;
+  margin-left: 20px;
+}
+}
+
+#skill {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+
+#frontend,
+#backend {
+  margin-bottom:20px ;
+  // border: 2px solid blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  .info{
+      // border: 2px solid rgb(55, 225, 13);
+      width: 60%;
+      padding: 5px;
+  }
+  p{
+    margin-top: 15px;
+    font-size: 1.4rem;
+    font-family: monospace;
+  }
+}
+
+#fontend_logo {
+  width: 400px;
+  height: 300px;
+  // border: 2px solid rgb(18, 153, 88);
+}
+
+.lang {
+  width: 40%;
+}
+
+.lang_ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  li {
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 80px;
+    height: 100px;
+  }
+
+  .group:hover .lang_icon {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.lang_icon {
+  width: 60px;
+  height: 60px;
+  transition: 0.3s ease;
+}

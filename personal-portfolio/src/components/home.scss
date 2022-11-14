@@ -1,0 +1,60 @@
+@import "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
+
+.intro {
+ // background: #424242;
+  width: 100vw;
+  height: 100vh;
+}
+
+#top_line {
+  height: 10px;
+  background: rgb(106, 34, 195);
+  background: linear-gradient(
+    14deg,
+    rgba(106, 34, 195, 1) 0%,
+    rgba(45, 210, 253, 1) 100%
+  );
+  border: none;
+}
+
+#first_look {
+  position: relative;
+  top:25%;
+  width: 100%;
+  height: auto;
+///  border: 2px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#name_intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+  text-align: end;
+  margin-right:  0px;
+ // border: 2px solid rgb(96, 71, 144);
+  h1 {
+    font-size: 4.5em;
+    //border: 2px solid rgb(165, 163, 29);
+    margin: 0px;
+    padding: 5px;
+  }
+  span {
+    display: inline-block;
+    font-size: 1.5em;
+    //border: 2px solid rgb(29, 100, 61);
+  }
+}
+
+#prince_img {
+  width: 400px;
+  height: 400px; 
+  border-radius: 50%;
+}
+
+//////////////////////////////////////////////////////////////
+ 
+

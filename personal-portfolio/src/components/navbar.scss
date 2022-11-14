@@ -1,0 +1,32 @@
+#navbar {
+  width: 100%;
+  background: rgb(0, 0, 0);
+  height: 40px;
+  overflow: hidden;
+
+  ul {
+    position: relative;
+    left: 30%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    li {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: white;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+        padding: 10px;
+      }
+    }
+  }
+
+  li:hover {
+    background: white;
+    color: black;
+  }
+}

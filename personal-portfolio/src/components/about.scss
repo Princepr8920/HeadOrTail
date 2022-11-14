@@ -1,0 +1,41 @@
+
+
+#about{
+  display: flex;
+  justify-content: space-around;
+  width:96%;
+  //  border:2px solid red;  
+  position: relative;
+  left: 30px;
+  border-radius: 10px;
+  h1{
+    font-size: 4em; 
+    //text-align: end;
+  }
+
+  
+
+#about_img{
+  width: 500px;
+  height: 400px;
+
+}
+
+}
+
+#describe{
+    //  border:2px solid green;  
+       position: relative;
+        margin-top:50px;
+  }
+
+  #info{
+    padding: 20px;
+    p{
+      margin-top: 25px;
+      word-wrap: break-word;
+      font-size: 1.4rem;
+    }
+    width: 50%;
+  // border:2px solid rgb(17, 30, 206); 
+  }
