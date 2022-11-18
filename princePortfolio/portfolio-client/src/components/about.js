@@ -44,7 +44,7 @@ export default function About() {
         <h1>About me</h1>
         <div className="my_paragraph">
           <p>
-            Hello, My name is Prince. I am the person who is born only for
+            Hello, my name is Prince. I am the person who is born only for
             technology and learning new things. My journey as a frontend
             developer started on 3rd December 2020 when I wrote my first HTML
             code and that code changed my life. Because now I was doing the work

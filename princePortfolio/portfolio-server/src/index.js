@@ -17,6 +17,8 @@ app.use(logger("dev"));
 require("dotenv").config();
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(__dirname,"../public")))
+
 mongoose.connect(
   process.env.DB_CONN,
   { useNewUrlparser: true, useUnifiedTopology: true },
@@ -29,11 +31,6 @@ mongoose.connect(
 app.use(Credentials);
 app.use(cors(corsOptions));
 app.use(express.json());
-
-
-
-
-
 
 app.use("/contact", validationRules, validator);
 app.use(
@@ -64,7 +61,11 @@ app.use(
 
 app.use(routes);
 
-app.use(express.static(path.join(__dirname+"/public")))
+ 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 
 app.listen(process.env.PORT || 4000, (err) => {
   if (err) return console.error(err);
