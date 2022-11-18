@@ -13,6 +13,15 @@ const express = require("express"),
   path =require("path")
 app.use(helmet());
 
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      "img-src": ["'self'", "https: data:"]
+    }
+  })
+)
+
 app.use(logger("dev"));
 require("dotenv").config();
 app.use(bodyParser.urlencoded({ extended: true }));

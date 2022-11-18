@@ -257,8 +257,9 @@ export default function Contact() {
               ) : (
                 <div id="msg_Limit">
                   <img
+                    crossorigin="anonymous"
                     src="https://lukaszadam.com/best-laptop-reddit.svg"
-                    alt="limiter"
+                    alt="daily_limit_exceeds"
                   />
                   <h2>{getValue?.error?.message}</h2>
                 </div>
@@ -275,7 +276,10 @@ export default function Contact() {
                     <h3>
                       <i className="fas fa-envelope-square"></i>Email
                     </h3>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=PrincePr920@outlook.com">
+                    <a
+                      rel="noreferrer"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=PrincePr920@outlook.com"
+                    >
                       PrincePr920@outlook.com
                     </a>
                   </div>
@@ -291,18 +295,27 @@ export default function Contact() {
                   <a rel="noreferrer" href="https://github.com/Princepr8920">
                     <i className="fa-brands fa-github"></i>Github
                   </a>
-                  <a rel="noreferrer" href="https://www.linkedin.com/in/prince-saini-056582201/">
+                  <a
+                    rel="noreferrer"
+                    href="https://www.linkedin.com/in/prince-saini-056582201/"
+                  >
                     <i className="fa-brands fa-linkedin"></i>Linkedin
                   </a>
                 </div>
               </div>
               <div>
                 <img
+                  crossorigin="anonymous"
                   id="conversation"
                   src="https://lukaszadam.com/assets/downloads/javascript_illustration.svg"
                   alt="conversation_svg"
                 />
-                <a  rel="noreferrer" id="backTotop" title="Back to top" href="/#intro">
+                <a
+                  rel="noreferrer"
+                  id="backTotop"
+                  title="Back to top"
+                  href="/#intro"
+                >
                   <i className="fas fa-arrow-circle-up"></i>
                 </a>
               </div>

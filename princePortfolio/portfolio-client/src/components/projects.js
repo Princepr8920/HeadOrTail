@@ -125,6 +125,7 @@ export default function Projects() {
                     target="_blank" 
                   >
                     <img
+                    crossorigin="anonymous"
                       id="project_img"
                       src={project.img_url}
                       alt={project.projectName}
