@@ -1,51 +1,59 @@
 $raduis: 20px;
+$trans: 0.2s ease;
+
+#contact {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: #eceeff;
+  border: 2px solid transparent;
+}
 
 #contact_div {
-  width: 90%; 
-  padding: 2em;
-  margin: 0.5em;
-  height: auto;
+  width: 90%;
+  padding: 1em;
+  height: 100%;
   position: relative;
   left: 5%;
   border-radius: $raduis;
+  //border: 2px solid rgb(18, 4, 220);
 }
 
-
-#contact_header{  
-  background: rgba(191, 183, 183, 0.441);
- display: flex;
- justify-content: center;
- align-items:center;
- padding: 0px;
+#contact_header {
+  position: relative;
+  top: 20px;
+  background: rgba(217, 210, 210, 0.66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
 }
-
 
 #contact_header,
-#contact_items { 
-  border-radius: $raduis;
+#contact_items {
+  border-radius: 10px;
   width: 95%;
   position: relative;
   left: 2.5%;
   h1 {
-    margin-top: -6px;
-    font-size: 3rem; 
+    margin-top: 3px;
+    font-size: 2rem;
   }
 }
 
 #contact_items {
   overflow: hidden;
-  border: 2px solid rgba(71, 71, 78, 0.862); 
   border-radius: $raduis;
   width: 95%;
   position: relative;
   left: 2.5%;
   margin-top: 2em;
-  height: 550px;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
 
-  #client_info { 
+  #client_info {
     width: 49%;
     margin-right: 1rem;
     border-radius: $raduis;
@@ -53,44 +61,116 @@ $raduis: 20px;
     form {
       display: flex;
       flex-direction: column;
-      input {
-        height: 40px;
-        border-radius: 5px;
-        outline: none;
-        border: 1px solid black;
-        padding: 5px;
-        font-size: 1.1rem;
-      }
-      label {
-        margin: 5px;
-        span {
+      // border: 2px solid rgb(133, 18, 227);
+      div {
+        display: flex;
+        flex-direction: column;
+        //  border: 1px solid rgb(227, 18, 18);
+        input {
+          transition: $trans;
+          height: 40px;
+          border-radius: 5px;
+          outline: none;
+          border: 0.3px solid black;
+          background: rgba(217, 210, 210, 0.299);
+          padding: 5px;
+          font-size: 1.1rem;
+        }
+        .inputError {
+          margin: 3px;
           color: red;
+          display: inline;
+          width: fit-content;
+          padding: 0px 10px;
+          font-size: 0.9em;
+          border-radius: 10px;
+          i {
+            margin: 3px;
+            vertical-align: bottom;
+          }
+        }
+        label {
+          margin: 4px;
+          span {
+            transition: 1s ease;
+            color: red;
+          }
+        }
+        textarea {
+          border-radius: 5px;
+          border: 0.3px solid black;
+          background: rgba(217, 210, 210, 0.299);
+          resize: vertical;
+          padding: 5px;
+          font-size: 1.1rem;
         }
       }
-      textarea {
-        border-radius: 5px;
-        border: 1px solid black;
-        resize: vertical;
-        padding: 5px;
-        font-size: 1.1rem;
-      }
+
       #send {
         margin-top: 10px;
+        cursor: pointer;
+        text-align: center;
+        span {
+          color: white;
+          vertical-align: top;
+          margin: 6px;
+        }
+      }
+      #sent,
+      #not_sent {
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        h5 {
+          margin: 5px;
+        }
+      }
+
+      #sent {
+        background: rgba(77, 192, 117, 0.66); 
+        border: 0.5px solid green;
+      }
+      #not_sent {
+        background: rgba(189, 63, 63, 0.66);
+       
       }
     }
   }
 
-  #my_info {
+  #msg_Limit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    height: 100%;
+    border-radius: $raduis;
+    background: transparent;
+    //color:white;
+    text-align: center;
+    img {
+      transition: $trans;
+      height: auto;
+      width: 95%;
+    }
+    img:hover {
+      width: 100%;
+    }
+  }
+
+  #my_info { 
     border-radius: $raduis;
     width: 49%;
-    margin-left: 1rem; 
+    margin-left: 1rem;
     padding: 10px;
+    // border: 1px solid rgb(18, 199, 227);
   }
 }
 
 #contact_us,
 #my_address {
-  width: 100%; 
+  width: 100%;
   border-radius: $raduis;
   padding: 5px;
 }
@@ -103,40 +183,62 @@ $raduis: 20px;
   color: black;
   address {
     padding: 3px;
-    width: 50%;
-    div {
+    width: 55%;
+    #myPhone,
+    #myEmail {
+      width: 100%;
+      height: 100px;
+      max-height: 120px;
       margin: 10px;
     }
   }
   h3 {
+    margin: 5px;
     i {
       margin: 5px 5px 0px 0px;
     }
-
     font-size: 1.2rem;
   }
   a {
+    word-wrap: break-word;
+    transition: $trans;
+    display: inline-block;
     text-decoration: none;
+    background: rgba(217, 210, 210, 0.66);
+    border-radius: 10px;
+    color: black;
+    padding: 5px;
   }
-  #social {
-  //  border: 2px solid red; 
+
+  a:hover {
+    font-size: 1.1rem;
+    text-decoration: underline;
+    background: rgba(167, 162, 186, 0.66);
+  }
+
+  #social { 
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding:10px;
+    padding: 10px;
     a {
       text-align: center;
-      background: rgba(158, 152, 152, 0.441);
+      background: rgba(217, 210, 210, 0.66);
       padding: 5px;
       border-radius: 10px;
-      width: 150px; 
+      width: 150px;
     }
     i {
       vertical-align: middle;
       font-size: 2.5rem;
       margin-right: 5px;
-      color: rgba(96, 148, 194, 0.685);
+    }
+    .fa-github {
+      color: rgba(0, 0, 0, 0.715);
+    }
+    .fa-linkedin {
+      color: rgb(61, 106, 197);
     }
     a:hover {
       text-decoration: underline;
@@ -150,8 +252,142 @@ $raduis: 20px;
   }
 }
 
+ #backTotop{
+  transition: 0.3s ease;
+  font-size: 3rem;
+  color: rgba(67, 62, 62, 0.66);
+}
+
+#backTotop:hover{
+  font-size: 3.3rem;
+    color: rgba(4, 82, 160, 0.66);
+}
+
 #conversation {
-  width: 100%;
-  height: 300px;
-  margin: auto;
+  width: 80%;
+  height: 180px;
+  margin: 10px 0px 0px 0px;
+}
+
+// //////////////// background old
+
+// svg {
+//   width: 100%;
+//   height: 100%;
+//   min-height: 80vh;
+// }
+
+// @keyframes rotate {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+// .top-outer {
+//   transform-origin: 73px 69px;
+//   animation: rotate 30s linear infinite;
+// }
+
+// .top-inner {
+//   transform-origin: 73px 69px;
+//   animation: rotate 20s linear infinite;
+// }
+
+// .bottom-outer {
+//   transform-origin: 134px 222px;
+//   animation: rotate 30s linear infinite;
+// }
+
+// .bottom-inner {
+//   transform-origin: 134px 222px;
+//   animation: rotate 20s linear infinite;
+// }
+
+@media screen and (max-width: 800px) {
+  #contact_items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    #client_info {
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+    }
+
+    #my_info {
+      width: 100%;
+      margin: 5px 0px 0px 0px;
+      padding: 10px;
+    }
+  }
+
+  #contact_us,
+  #my_address {
+    width: 100%;
+    padding: 3px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+    #myPhone,
+    #myEmail {
+      font-size: 1rem;
+      word-break: break-all;
+    }
+
+    #social {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      a {
+        padding: 5px;
+        width: 85px;
+        margin: 0px;
+      }
+      i {
+        font-size: 2rem;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  #contact_header {
+    top: 20px;
+  }
+
+  #conversation {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #my_address {
+    width: 100%;
+    padding: 3px;
+    h2 {
+      font-size: 1.5rem;
+    }
+    address {
+      padding: 0px;
+      #myPhone,
+      #myEmail {
+        font-size: 1rem;
+        word-break: break-all;
+        margin: 0px;
+      }
+    }
+
+    #social {
+      a {
+        padding: 5px;
+        width: 85px;
+        margin: 0px;
+      }
+      i {
+        font-size: 2rem;
+        margin-right: 5px;
+      }
+    }
+  }
 }

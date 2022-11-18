@@ -110,9 +110,10 @@ export default function Projects() {
     },
   ];
   return (
-    <>
       <section id="projects">
+        <div id="layout">
       <div id="projects-header"><h2>These are some of my projects</h2></div>
+      <div>
         <ul id="projects-grid">
           {projects.map((project, index) => {
             return (
@@ -132,13 +133,14 @@ export default function Projects() {
                     <div id="overlay">
                       <ul>
                         <li>Project name : {project.projectName}. </li>
-                        <li>Date of creation: {project.date_of_creation} </li>
-                        <li>Created by: Prince</li>
+                        <li>Date of creation : {project.date_of_creation} </li>
+                        <li>Created by : Prince</li>
                       </ul>
                     </div>
                   </a>
 
                   <div id="project-name">
+                    <div>
                     <span className="code">{"< "}</span>
                     <a
                       id="name_link"
@@ -150,12 +152,14 @@ export default function Projects() {
                     </a>
                     <span className="code">{" />"}</span>
                   </div>
+                  </div>
                 </div>
               </li>
             );
           })}
         </ul>
+        </div>
+        </div>
       </section>
-    </>
   );
 }

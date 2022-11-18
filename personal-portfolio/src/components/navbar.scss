@@ -1,32 +1,128 @@
-#navbar {
-  width: 100%;
-  background: rgb(0, 0, 0);
-  height: 40px;
-  overflow: hidden;
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=M+PLUS+Rounded+1c:wght@500&family=Orbitron&family=Quantico&family=Teko:wght@300&display=swap");
 
+#navbar_L {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  width: 100%;
+  color: black;
+  height: 30px;
+  z-index: 1;
+  background: #eceeff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: 0.3s ease;
   ul {
+    margin-top: 10px;
+    overflow: hidden;
     position: relative;
-    left: 30%;
-    width: 40%;
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-
+    justify-content: space-around;
     li {
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      color: white;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      transition: 0.2s ease;
+      width: fit-content;
+      max-height: 50px;
       a {
         display: inline-block;
         text-decoration: none;
-        color: inherit;
-        padding: 10px;
+        font-size: 1.2rem;
+        font-family: "M PLUS Rounded 1c", sans-serif, monospace;
+        color: black;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
     }
-  }
 
-  li:hover {
-    background: white;
-    color: black;
+    li:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+#navbar_S {
+  display: none;
+}
+
+#navbar_L:hover {
+  background: rgba(217, 210, 210, 0.66);
+}
+
+@media screen and (max-width: 800px) {
+  #navbar_L{
+    position: sticky;
+    ul {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #navbar_L {
+    display: none;
+  }
+  #navbar_S {
+    transition: 0.4s ease;
+    padding: 0px;
+    display: flex;
+    background: #eceeff;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+    left: 90%;
+    button {
+      border: none;
+      position: absolute;
+      top: 10px;
+      left: 88%;
+      z-index: 1;
+      background: transparent;
+      i {
+        font-size: 2rem;
+      }
+    }
+    #opt {
+      transition: 0.4s ease;
+      width: 100%;
+      background: transparent;
+
+      ul {
+        width: 100%;
+        background: rgba(118, 116, 116, 0.189);
+        transition: 0.4s ease;
+        float: right;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        li {
+          height: auto;
+          transition: 0.4s ease;
+          list-style: none;
+          text-align: center;
+          a {
+            font-size: 1.4rem;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+        li:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 }
