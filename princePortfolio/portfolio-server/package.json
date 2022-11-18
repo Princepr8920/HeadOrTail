@@ -4,8 +4,8 @@
   "description": "Prince portfolio website",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+ 
   },
   "author": "Prince",
   "license": "ISC",

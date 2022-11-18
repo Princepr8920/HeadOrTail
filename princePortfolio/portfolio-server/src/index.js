@@ -9,8 +9,8 @@ const express = require("express"),
   routes = require("./routes"),
   rateLimiter = require("./middleware/limiter"),
   { validationRules, validator } = require("./middleware/validator"),
-  helmet = require("helmet");
-
+  helmet = require("helmet"),
+  path =require("path")
 app.use(helmet());
 
 app.use(logger("dev"));
@@ -29,6 +29,11 @@ mongoose.connect(
 app.use(Credentials);
 app.use(cors(corsOptions));
 app.use(express.json());
+
+
+
+
+
 
 app.use("/contact", validationRules, validator);
 app.use(
@@ -58,6 +63,8 @@ app.use(
 );
 
 app.use(routes);
+
+app.use(express.static(path.join(__dirname+"/public")))
 
 app.listen(process.env.PORT || 4000, (err) => {
   if (err) return console.error(err);
