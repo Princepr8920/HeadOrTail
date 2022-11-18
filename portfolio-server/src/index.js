@@ -29,7 +29,7 @@ app.use(rateLimiter(1440,50,{status:429,success:false,message:"You have reached 
 
 app.use(routes)
  
-app.listen(2000,(err)=>{
+app.listen(process.env.PORT || 4000,(err)=>{
   if(err) return console.error(err);
-  console.log("Server started successfully ✔")
+  console.log(`Server started successfully on PORT : ${process.env.PORT} ✔`)
 })
