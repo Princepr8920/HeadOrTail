@@ -119,11 +119,10 @@ export default function Projects() {
             return (
               <li id="project_list" key={index}>
                 <div id="project_container">
-                  <a
+                  <a rel="noreferrer"
                     className="img_anchor"
                     href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target="_blank" 
                   >
                     <img
                       id="project_img"
@@ -146,7 +145,7 @@ export default function Projects() {
                       id="name_link"
                       href={project.url}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noreferrer"
                     >
                       {project.projectName}
                     </a>

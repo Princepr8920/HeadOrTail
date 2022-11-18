@@ -22,7 +22,7 @@ export default function Navbar() {
           {navs.map((nav, i) => {
             return (
               <li key={i}>
-                <a href={nav.link}>{nav.name}</a>
+                <a href={nav.link} rel="noreferrer">{nav.name}</a>
               </li>
             );
           })}

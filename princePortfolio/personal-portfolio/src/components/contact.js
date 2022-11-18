@@ -288,10 +288,10 @@ export default function Contact() {
                   </div>
                 </address>
                 <div id="social">
-                  <a href="https://github.com/Princepr8920">
+                  <a rel="noreferrer" href="https://github.com/Princepr8920">
                     <i className="fa-brands fa-github"></i>Github
                   </a>
-                  <a href="https://www.linkedin.com/in/prince-saini-056582201/">
+                  <a rel="noreferrer" href="https://www.linkedin.com/in/prince-saini-056582201/">
                     <i className="fa-brands fa-linkedin"></i>Linkedin
                   </a>
                 </div>
@@ -302,7 +302,7 @@ export default function Contact() {
                   src="https://lukaszadam.com/assets/downloads/javascript_illustration.svg"
                   alt="conversation_svg"
                 />
-                <a id="backTotop" title="Back to top" href="/#intro">
+                <a  rel="noreferrer" id="backTotop" title="Back to top" href="/#intro">
                   <i className="fas fa-arrow-circle-up"></i>
                 </a>
               </div>

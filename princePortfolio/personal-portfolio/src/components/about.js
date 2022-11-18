@@ -5,9 +5,9 @@ export default function About() {
     { name: "Javascript", icon: "js.png" },
     { name: "HTML 5", icon: "html.png" },
     { name: "CSS 3", icon: "css.png" },
-   
+
     { name: "React", icon: "react.png" },
-    { name: "Sass", icon: "sass.png" }, 
+    { name: "Sass", icon: "sass.png" },
     { name: "mongoose", icon: "mongoose.png" },
     { name: "Bootstrap", icon: "bootstrap.png" },
     { name: "Node.js", icon: "node.png" },
@@ -56,7 +56,11 @@ export default function About() {
             projects and roles with relative ease. I prefer to keep learning,
             continue challenging myself, and do interesting things that matter.
             My personality type is{" "}
-            <a href="http://www.personalitypage.com/ENTJ.html" target="_blank">
+            <a
+              href="http://www.personalitypage.com/ENTJ.html"
+              rel="noreferrer"
+              target="_blank"
+            >
               ENTJ
             </a>
             . I currently work remotely with a selected freelance client base
