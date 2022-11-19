@@ -30,7 +30,6 @@ export default function Contact() {
 
   function wait() {
     const timout = setTimeout(() => {
-      console.log("success");
       setValue((rest) => ({
         ...rest,
         name: "",
@@ -258,7 +257,7 @@ export default function Contact() {
                 <div id="msg_Limit">
                   <img
                     crossorigin="anonymous"
-                    src="https://lukaszadam.com/best-laptop-reddit.svg"
+                    src={require("../assets/illustrations/limit.png")}
                     alt="daily_limit_exceeds"
                   />
                   <h2>{getValue?.error?.message}</h2>
@@ -288,7 +287,7 @@ export default function Contact() {
                     <h3>
                       <i className="fas fa-mobile-alt"></i>Phone
                     </h3>
-                    <a href="tel:+917027628920">+917027628920</a>
+                    <a rel="noreferrer" href="tel:+917027628920">+917027628920</a>
                   </div>
                 </address>
                 <div id="social">
@@ -303,11 +302,11 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-              <div>
+              <div className="contact-bottom">
                 <img
-                  crossorigin="anonymous"
+                  crossOrigin="anonymous"
                   id="conversation"
-                  src="https://lukaszadam.com/assets/downloads/javascript_illustration.svg"
+                  src={require("../assets/illustrations/contact.png")}
                   alt="conversation_svg"
                 />
                 <a
