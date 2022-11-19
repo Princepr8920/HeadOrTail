@@ -290,13 +290,13 @@ export default function Contact() {
                 </address>
                 <div id="social">
                   <a rel="noreferrer" href="https://github.com/Princepr8920">
-                    <i className="fa-brands fa-github"></i>Github
+                    <i className="fa-brands fa-github"></i><span>Github</span> 
                   </a>
                   <a
                     rel="noreferrer"
                     href="https://www.linkedin.com/in/prince-saini-056582201/"
                   >
-                    <i className="fa-brands fa-linkedin"></i>Linkedin
+                    <i className="fa-brands fa-linkedin"></i><span>Linkedin</span>
                   </a>
                 </div>
               </div>

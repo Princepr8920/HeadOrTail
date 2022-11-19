@@ -17,7 +17,6 @@ $trans: 0.2s ease;
   position: relative;
   left: 5%;
   border-radius: $raduis;
-  //border: 2px solid rgb(18, 4, 220);
 }
 
 #contact_header {
@@ -172,6 +171,7 @@ $trans: 0.2s ease;
 }
 
 #my_address {
+   
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
@@ -180,12 +180,26 @@ $trans: 0.2s ease;
   address {
     padding: 3px;
     width: 55%;
+
     #myPhone,
     #myEmail {
+       
       width: 100%;
-      height: auto;
+      height: 80px;
       max-height: 100px;
       margin: 10px;
+      word-wrap: break-word;
+
+      a {
+        border-radius: 10px;
+        padding: 5px;
+      }
+
+      a:hover {
+        font-size: 1.1rem;
+        text-decoration: underline;
+        background: rgba(167, 162, 186, 0.66);
+      }
     }
   }
   h3 {
@@ -195,40 +209,60 @@ $trans: 0.2s ease;
     }
     font-size: 1.2rem;
   }
+
   a {
-    word-wrap: break-word;
+
+    background: rgba(217, 210, 210, 0.66);
+    color: black;
     transition: $trans;
     display: inline-block;
     text-decoration: none;
-    background: rgba(217, 210, 210, 0.66);
-    border-radius: 10px;
-    color: black;
-    padding: 5px;
-  }
-
-  a:hover {
-    font-size: 1.1rem;
-    text-decoration: underline;
-    background: rgba(167, 162, 186, 0.66);
+    word-break: break-all;
   }
 
   #social {
+     
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: flex-end ;
     padding: 10px;
+
     a {
+ 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
       text-align: center;
-      background: rgba(217, 210, 210, 0.66);
       padding: 5px;
       border-radius: 10px;
       width: 150px;
+      height: 80px;
+      span,
+      i {
+        transition: $trans;
+      }
+      i {
+        font-size: 2.5rem;
+        margin-right: 5px; 
+        width: 50px; 
+      }
     }
-    i {
-      vertical-align: middle;
-      font-size: 2.5rem;
-      margin-right: 5px;
+
+    a>span :hover {
+      text-decoration: underline; 
+    }
+
+    a:hover .fa-github {
+      color: black;
+      font-size: 2.8rem;
+    }
+    a:hover .fa-linkedin {
+      color: rgb(0, 81, 243);
+      font-size: 2.8rem;
+
     }
     .fa-github {
       color: rgba(0, 0, 0, 0.715);
@@ -236,22 +270,13 @@ $trans: 0.2s ease;
     .fa-linkedin {
       color: rgb(61, 106, 197);
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    a:hover .fa-github {
-      color: black;
-    }
-    a:hover .fa-linkedin {
-      color: rgb(0, 81, 243);
-    }
   }
 }
 
 .contact-bottom {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 #backTotop {
@@ -265,44 +290,60 @@ $trans: 0.2s ease;
   color: rgba(4, 82, 160, 0.66);
 }
 
-#conversation { 
+#conversation {
   width: 50%;
   margin: 0px 0px 0px 0px;
 }
 
-// //////////////// background old
+@media screen and (max-width: 1100px) {
+  #my_address {
+    padding: 3px;
 
-// svg {
-//   width: 100%;
-//   height: 100%;
-//   min-height: 80vh;
-// }
+    h2 {
+      font-size: 1.5rem;
+    }
+    address {
+      padding: 0px;
+      width: 60%;
+      #myPhone,
+      #myEmail {
+        width: 95%;
+        height: 100px;
+        max-height: 120px;
+        margin: 0px;
+        word-wrap: break-word;
+      }
+    }
 
-// @keyframes rotate {
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
+    #social {
+      a {
+        padding: 5px;
+        width: 80px;
+        margin: 0px;
+      }
+      i {
+        font-size: 2rem;
+        margin-right: 5px;
+      }
+    }
+  }
 
-// .top-outer {
-//   transform-origin: 73px 69px;
-//   animation: rotate 30s linear infinite;
-// }
+  #backTotop {
+    transition: 0.3s ease;
+    font-size: 3rem;
+    color: rgba(67, 62, 62, 0.66);
+  }
 
-// .top-inner {
-//   transform-origin: 73px 69px;
-//   animation: rotate 20s linear infinite;
-// }
+  #backTotop:hover {
+    font-size: 3.3rem;
+    color: rgba(4, 82, 160, 0.66);
+  }
 
-// .bottom-outer {
-//   transform-origin: 134px 222px;
-//   animation: rotate 30s linear infinite;
-// }
-
-// .bottom-inner {
-//   transform-origin: 134px 222px;
-//   animation: rotate 20s linear infinite;
-// }
+  #conversation {
+    width: 85%;
+    margin: 0px;
+  }
+}
 
 @media screen and (max-width: 800px) {
   #contact_items {
@@ -340,7 +381,7 @@ $trans: 0.2s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      align-items: center;
+      align-items: flex-end;
       a {
         padding: 5px;
         width: 85px;

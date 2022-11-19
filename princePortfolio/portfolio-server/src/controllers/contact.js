@@ -22,8 +22,7 @@ const contact = async (req, res) => {
     if (send.success) {
       const reply = {
         success: true,
-        message: "Message sent successfully ✔.",
-        info: "I contact you as soon as possible 🙂.",
+        message: "Message sent successfully ✔."
       };
       return res.status(200).json(reply);
     } else {
