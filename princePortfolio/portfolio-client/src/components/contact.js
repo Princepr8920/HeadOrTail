@@ -49,7 +49,7 @@ export default function Contact() {
     e.preventDefault();
     const { name, email, subject, message } = getValue;
     const json = JSON.stringify({ name, email, subject, message });
-    const url = "/contact";
+    const url = "https://prince8920-portfolio.herokuapp.com/contact";
     let options = {
       withCredentials: true,
       headers: {

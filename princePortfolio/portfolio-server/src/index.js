@@ -10,7 +10,8 @@ const express = require("express"),
   rateLimiter = require("./middleware/limiter"),
   { validationRules, validator } = require("./middleware/validator"),
   helmet = require("helmet"),
-  path =require("path")
+  path =require("path"),
+  port = process.env.PORT;
 app.use(helmet());
 
 app.use(
@@ -76,7 +77,7 @@ app.get('/*', function (req, res) {
 });
 
 
-app.listen(process.env.PORT || 2500, (err) => {
+app.listen(port || 2500, (err) => {
   if (err) return console.error(err);
-  console.log(`Server started successfully on PORT : ${process.env.PORT} ✔`);
+  console.log(`Server started successfully on PORT : ${port || 2500} ✔`);
 });
