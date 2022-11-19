@@ -49,7 +49,7 @@ export default function Contact() {
     e.preventDefault();
     const { name, email, subject, message } = getValue;
     const json = JSON.stringify({ name, email, subject, message });
-    const url = "http://localhost:2500/contact";
+    const url = "/contact";
     let options = {
       withCredentials: true,
       headers: {
@@ -74,7 +74,7 @@ export default function Contact() {
           ...rest,
           inputError: inputError,
         }));
-      } else if (err.message === "Network Error") { 
+      } else if (err.message === "Network Error") {
         setValue((rest) => ({
           ...rest,
           error: { status: 500, message: err.message + " ❌", success: false },
@@ -246,7 +246,7 @@ export default function Contact() {
                       </div>
                     ) : (
                       <div id="sent">
-                        <h5>{getValue?.success?.message}</h5> 
+                        <h5>{getValue?.success?.message}</h5>
                       </div>
                     )}
                   </div>
@@ -285,18 +285,22 @@ export default function Contact() {
                     <h3>
                       <i className="fas fa-mobile-alt"></i>Phone
                     </h3>
-                    <a rel="noreferrer" href="tel:+917027628920">+917027628920</a>
+                    <a rel="noreferrer" href="tel:+917027628920">
+                      +917027628920
+                    </a>
                   </div>
                 </address>
                 <div id="social">
                   <a rel="noreferrer" href="https://github.com/Princepr8920">
-                    <i className="fa-brands fa-github"></i><span>Github</span> 
+                    <i className="fa-brands fa-github"></i>
+                    <span>Github</span>
                   </a>
                   <a
                     rel="noreferrer"
                     href="https://www.linkedin.com/in/prince-saini-056582201/"
                   >
-                    <i className="fa-brands fa-linkedin"></i><span>Linkedin</span>
+                    <i className="fa-brands fa-linkedin"></i>
+                    <span>Linkedin</span>
                   </a>
                 </div>
               </div>
@@ -320,42 +324,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMin slice"
-        viewBox="24 105 156 95"
-      >
-        <rect x="0" y="0" width="300" height="500" fill="#E22227" />
-        <path
-          className="top-outer"
-          fill="#EF8716"
-          stroke="#371300"
-          strokeWidth="1"
-          d="M68 1c23,0 67,17 69,39 4,38 5,52 -5,69 -20,36 -68,46 -120,-9 -27,-28 -7,-101 56,-99z"
-        />
-        <path
-          className="top-inner"
-          fill="#537571"
-          stroke="#DCB467"
-          strokeWidth="1"
-          d="M69 22c33,-7 52,21 54,37 3,26 -1,28 -8,40 -15,25 -48,25 -85,-14 -19,-20 -4,-53 39,-63z"
-        />
-        <path
-          className="bottom-outer"
-          fill="#DCB467"
-          stroke="#371300"
-          strokeWidth="1"
-          d="M158 158c30,13 56,50 44,75 -9,18 -22,46 -42,55 -20,10 -48,2 -73,-19 -29,-25 -27,-55 -9,-79 17,-22 43,-48 80,-32z"
-        />
-        <path
-          className="bottom-inner"
-          fill="#263D56"
-          stroke="#537571"
-          strokeWidth="1"
-          d="M136 180c32,-9 45,13 46,29 3,27 8,29 0,42 -14,25 -52,24 -79,0 -21,-18 -2,-61 33,-71z"
-        />
-      </svg>   */}
     </>
   );
 }
