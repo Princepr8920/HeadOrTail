@@ -68,6 +68,7 @@ export default function Contact() {
       }
       return wait();
     } catch (err) {
+      console.log(err)
       if (err?.response?.status === 400) {
         const inputError = err?.response?.data.errObj;
         setValue((rest) => ({
