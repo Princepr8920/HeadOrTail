@@ -49,7 +49,7 @@ export default function Contact() {
     e.preventDefault();
     const { name, email, subject, message } = getValue;
     const json = JSON.stringify({ name, email, subject, message });
-    const url = "http://localhost:2000/contact";
+    const url = "http://localhost:2500/contact";
     let options = {
       withCredentials: true,
       headers: {
@@ -74,8 +74,7 @@ export default function Contact() {
           ...rest,
           inputError: inputError,
         }));
-      } else if (err.message === "Network Error") {
-        console.log(err);
+      } else if (err.message === "Network Error") { 
         setValue((rest) => ({
           ...rest,
           error: { status: 500, message: err.message + " ❌", success: false },
@@ -247,8 +246,7 @@ export default function Contact() {
                       </div>
                     ) : (
                       <div id="sent">
-                        <h5>{getValue?.success?.message}</h5>
-                        <p>{getValue?.success?.info}</p>
+                        <h5>{getValue?.success?.message}</h5> 
                       </div>
                     )}
                   </div>

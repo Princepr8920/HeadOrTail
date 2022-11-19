@@ -11,10 +11,7 @@ export default function Navbar() {
     { name: "Contact", link: "#contact" },
   ];
 
-  function show() {
-    console.log(options);
-    return options ? setOptions(false) : setOptions(true);
-  }
+  
   return (
     <>
       <nav id="navbar_L">
@@ -36,7 +33,7 @@ export default function Navbar() {
         }}
         id="navbar_S"
       >
-        <button onClick={() => show()}>
+        <button onClick={() => setOptions(!options)}>
           {" "}
           <i className="fas fa-yin-yang"></i>
         </button>

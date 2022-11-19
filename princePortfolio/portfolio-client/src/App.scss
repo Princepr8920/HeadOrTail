@@ -1,9 +1,13 @@
 * {
-  box-sizing: border-box;
+ box-sizing: border-box;
   padding: 0px;
   margin: 0px;
   scroll-behavior: smooth;
   font-family: "M PLUS Rounded 1c", sans-serif, monospace;
+}
+
+html{
+    width: 100%; 
 }
 
 body {
@@ -11,15 +15,19 @@ body {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
   animation: fade 1s ease;
+  width: 100%; 
 }
-
-
+ 
 @keyframes fade {
   from {opacity: 0;}
   to {opacity: 0.9; }
 }
  
-
 body::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+   display: none; /* Safari and Chrome */
 }
+ 
+
+
+
+ 

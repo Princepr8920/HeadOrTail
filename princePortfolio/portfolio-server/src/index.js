@@ -76,7 +76,7 @@ app.get('/*', function (req, res) {
 });
 
 
-app.listen(process.env.PORT || 4000, (err) => {
+app.listen(process.env.PORT || 2500, (err) => {
   if (err) return console.error(err);
   console.log(`Server started successfully on PORT : ${process.env.PORT} ✔`);
 });

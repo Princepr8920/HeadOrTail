@@ -8,14 +8,14 @@ import "./App.scss";
 
 function App() {
   return (
-    <main>
+    <>
       <Navbar />
       <Home />
       <About />
       <Skills />
       <Projects />
       <Contact />
-    </main>
+    </>
   );
 }
 
