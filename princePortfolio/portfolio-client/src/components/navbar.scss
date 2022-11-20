@@ -8,12 +8,11 @@
   color: black;
   height: 30px;
   z-index: 1;
-  background: #eceeff;
   display: flex;
   align-items: center;
   justify-content: space-around;
   transition: 0.3s ease;
-  
+
   ul {
     margin-top: 10px;
     overflow: hidden;
@@ -57,7 +56,7 @@
 }
 
 @media screen and (max-width: 800px) {
-  #navbar_L{
+  #navbar_L {
     position: sticky;
     ul {
       width: 100%;
@@ -73,7 +72,6 @@
     transition: 0.4s ease;
     padding: 0px;
     display: flex;
-    background: #eceeff;
     flex-direction: column;
     align-items: center;
     position: sticky;
@@ -90,23 +88,35 @@
       i {
         font-size: 2rem;
       }
+      .rotate {
+        color: rgb(255, 255, 255);
+        transition: 0.5s ease;
+        animation: rotate 5s linear 0s infinite normal forwards;
+      }
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
     }
     #opt {
       transition: 0.4s ease;
       width: 100%;
-      background: transparent; 
-     
+      background: transparent;
+      background: rgba(20, 19, 19, 0.825); 
       ul {
         width: 100%;
-        background: rgba(118, 116, 116, 0.189);
-        transition: 0.4s ease; 
+        transition: 0.4s ease;
         display: flex;
         flex-direction: column;
         align-items: center;
-         
+
         position: relative;
         li {
-          margin-left: -25px; 
+          margin-left: -25px;
           height: auto;
           transition: 0.4s ease;
           list-style: none;
@@ -115,7 +125,7 @@
             font-size: 1.4rem;
             text-decoration: none;
             text-align: center;
-            color: black;
+            color: white;
           }
           a:hover {
             text-decoration: underline;

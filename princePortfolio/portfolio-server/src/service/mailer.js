@@ -30,7 +30,7 @@ const mailNotification = async (info) => {
  <li> Name : ${name}</li>
  <li> email :  ${email}</li>
  <li> Type : ${oldOrNew}</li>
- <li>Time : ${new Date(time).toGMTString()}</li>
+ <li>Time : ${new Date(time)}</li>
  </ul>
  </div>`;
 

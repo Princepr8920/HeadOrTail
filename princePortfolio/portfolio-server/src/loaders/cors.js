@@ -1,7 +1,7 @@
 let cors = require("cors");
 
 module.exports = cors({
-  origin:"http://localhost:3000",
+  origin:"https://prince8920-portfolio.herokuapp.com",
   methods:"GET,POST,PUT,DELETE",
   credentials:true
 });

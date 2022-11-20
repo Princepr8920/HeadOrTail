@@ -35,7 +35,7 @@ export default function Navbar() {
       >
         <button onClick={() => setOptions(!options)}>
           {" "}
-          <i className="fas fa-yin-yang"></i>
+          <i className={`fas fa-yin-yang ${options ? "rotate" : ""}`}></i>
         </button>
         <div
           style={{

@@ -1,6 +1,5 @@
 const origins = [ 
-   `http://localhost:${process.env.PORT || 2500}`
-]
+  "https://prince8920-portfolio.herokuapp.com",
+];
 
-
-module.exports = origins
+module.exports = origins;

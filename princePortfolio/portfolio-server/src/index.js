@@ -10,24 +10,27 @@ const express = require("express"),
   rateLimiter = require("./middleware/limiter"),
   { validationRules, validator } = require("./middleware/validator"),
   helmet = require("helmet"),
-  path =require("path"),
+  path = require("path"),
   port = process.env.PORT;
+app.use(Credentials);
+app.use(cors(corsOptions));
+app.use(express.json());
 app.use(helmet());
 
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
-      "img-src": ["'self'", "https: data:"]
-    }
+      "img-src": ["'self'", "https: data:"],
+    },
   })
-)
+);
 
 app.use(logger("dev"));
 require("dotenv").config();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname,"../public")))
+app.use(express.static(path.join(__dirname, "../public")));
 
 mongoose.connect(
   process.env.DB_CONN,
@@ -37,10 +40,6 @@ mongoose.connect(
     console.log("Database connected successfully 🧠");
   }
 );
-
-app.use(Credentials);
-app.use(cors(corsOptions));
-app.use(express.json());
 
 app.use("/contact", validationRules, validator);
 app.use(
@@ -71,11 +70,9 @@ app.use(
 
 app.use(routes);
 
- 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-
 
 app.listen(port || 2500, (err) => {
   if (err) return console.error(err);
