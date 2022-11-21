@@ -35,9 +35,9 @@ export default function Skills() {
               <div className="info">
                 <h2>Frontend</h2>
                 <p>
-                  Frontend is an integral part of web development. To devlop
-                  frontend (client-side) there are lot of languages frameworks
-                  and libraries are avialable. As a frontend developer i use
+                  Front-end is an integral part of web development. To develop
+                  front-end there are lot of languages frameworks
+                  and libraries are available. As a frontend developer i use
                   different types of languages, frameworks and libraries to
                   maxmize my productivity.
                 </p>
