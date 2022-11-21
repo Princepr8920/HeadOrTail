@@ -5,7 +5,6 @@ export default function About() {
     { name: "Javascript", icon: "js.png" },
     { name: "HTML 5", icon: "html.png" },
     { name: "CSS 3", icon: "css.png" },
-
     { name: "React", icon: "react.png" },
     { name: "Sass", icon: "sass.png" },
     { name: "mongoose", icon: "mongoose.png" },
@@ -43,7 +42,7 @@ export default function About() {
       <div id="info">
         <h1>About me</h1>
         <div className="my_paragraph">
-          <p>
+          <p> 
             Hello, my name is Prince. I am the person who is born only for
             technology and learning new things. My journey as a frontend
             developer started on 3rd December 2020 when I wrote my first HTML

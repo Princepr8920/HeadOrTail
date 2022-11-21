@@ -18,19 +18,20 @@ const mailNotification = async (info) => {
     saved: { name, email, subject, message, time },
     oldOrNew,
   } = info;
-
+  let setTime = time.split(",")
   let body = `<h1>Hey Prince 🙋‍♂️</h1>
   <h2>New message from <strong>${name}</strong></h2>
-  <div style="padding:5px; border-radius:20px; border:0.5px solid black;">
+  <div style="padding:5px; border:0.5px solid green;">
   <span>Message</span>
   <h3>${message}</h3>
   </div>
   <div>
   <h3>About this user</h3> 
- <li> Name : ${name}</li>
- <li> email :  ${email}</li>
- <li> Type : ${oldOrNew}</li>
- <li>Time : ${new Date(time)}</li>
+ <li>Name : ${name}</li>
+ <li>email : ${email}</li>
+ <li>Type : ${oldOrNew}</li>
+ <li>Time : ${setTime[1]} </li>
+ <li>Date : ${setTime[0]}</li>
  </ul>
  </div>`;
 

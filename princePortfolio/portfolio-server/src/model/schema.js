@@ -11,7 +11,7 @@ const schema = Schema({
     required: [true, "UserID is required"],
     unique: true,
   },
-  time: { type: Date, default: new Date() },
+  time: { type: String, default: new Date() },
 });
 
 const contactSchema = mongoose.model("contactSchema", schema);

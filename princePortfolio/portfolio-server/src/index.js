@@ -25,7 +25,7 @@ app.use(
     },
   })
 );
-
+app.set('trust proxy', 1);
 app.use(logger("dev"));
 require("dotenv").config();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -50,11 +50,13 @@ app.use(
     {
       status: 429,
       success: false,
-      message: "You have reached your daily limit to send message ❗",
+      message: "You have reached your daily limit to send message.",
     },
     429
   )
 );
+
+
 app.use(
   rateLimiter(
     1440,

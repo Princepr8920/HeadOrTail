@@ -1,7 +1,8 @@
 const contactInfo = require("../model/schema");
 const { v4: uuidv4 } = require("uuid");
 const { mailNotification } = require("../service/mailer");
-
+const currentDate = require("../service/date")
+ 
 const contact = async (req, res) => {
   const { message, subject, email, name } = req.body; 
   const userID = uuidv4();
@@ -11,7 +12,7 @@ const contact = async (req, res) => {
     email,
     name,
     userID,
-    time: new Date(),
+    time: currentDate('+5.5'),
   });
 
   const user = await contactInfo.findOne({ email }).lean();
