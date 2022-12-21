@@ -1,0 +1,16 @@
+@import "/src/reusable.scss";
+
+.profileView {
+  width: 100%;
+  height: 49.2%; 
+  border-radius: $default_radius;
+  margin: 1px 0px 5px 0px;
+  padding: 5px; 
+  transition: 0.5s ease;
+}
+
+
+.extend{
+   height: 97% !important; 
+   
+}

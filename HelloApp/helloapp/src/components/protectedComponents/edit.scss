@@ -1,0 +1,144 @@
+@import "../../reusable.scss";
+
+#edit_Section {
+  overflow-y: auto;
+  height: 100vh;
+  padding: 20px;
+}
+
+.img_div {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  input {
+    display: none;
+  }
+  .edit_profile_img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    transition: 0.2s ease;
+  }
+
+  .edit_profile_img_div {
+    position: relative;
+    border-radius: 50%;
+  }
+
+  .edit_profile_img_div:hover .overlay {
+    opacity: 0.9;
+  }
+  .overlay {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(55, 54, 54, 0.436);
+    opacity: 0;
+    width: 180px;
+    height: 180px;
+    
+    border-radius: 50%;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    text-align: center;
+    p {
+      margin-top: 5px;
+      word-wrap: break-word;
+      color: #000000;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    i {
+      margin-top: 30px;
+      font-size: 2rem;
+    }
+  }
+}
+
+#edit_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  input,
+  textarea {
+    border: 0.5px solid black;
+    border-radius: 5px;
+    height: 40px;
+    margin: 5px 0px;
+  }
+
+  .submit {
+    width: 50%;
+    display: block;
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.edit_inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 10px 0px;
+}
+
+.firstAndlast {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  #edit_firstName {
+    width: 97%;
+  }
+  #edit_lastName {
+    width: 97%;
+  }
+}
+
+.verifyEmail_div {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 0%;
+}
+
+.verifyOrError {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  height: auto;
+  // transition: 0.3s ease;
+
+  .errorsInEdit {
+   // color: rgb(44, 170, 219);
+    display: inline !important;
+    margin: 0px;
+    width: 49%;
+    i {
+      color: inherit;
+      margin-right: 5px;
+      vertical-align: text-top;
+    }
+    span {
+      color: inherit;
+    }
+  }
+}
+
+.verify-btn {
+  margin: 0px !important;
+  padding: 0px !important;
+  button {
+    margin: 0px 0px 0px 5px !important;
+  }
+}

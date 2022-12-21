@@ -1,0 +1,32 @@
+$default_Light_Hover : rgba(109, 106, 106, 0.241);
+$default_dark_hover : black;
+$default_radius : 20px;
+ 
+
+// css for profileView and status view
+
+.default-items{
+  font-size: 1rem; 
+  font-weight: bold;
+  transition: 1s ease;
+  ul{
+    padding:5px;
+    li{
+      padding:5px
+    }
+  }
+ }
+
+
+// css for friends name list in sidechats and contacts 
+ 
+ .friendsName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 100%;
+  display: block;
+  width: 100%;
+  padding: 15px 15px;
+  text-decoration: none; 
+}
+ 

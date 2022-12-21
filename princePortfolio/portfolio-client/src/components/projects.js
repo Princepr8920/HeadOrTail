@@ -110,7 +110,7 @@ export default function Projects() {
     },
   ];
   return (
-      <section id="projects">
+      <section id="projects" className="reveal">
         <div id="layout">
       <div id="projects-header"><h2>These are some of my projects</h2></div>
       <div>

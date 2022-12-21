@@ -1,0 +1,160 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(48, 56, 86);
+
+  h1 {
+    user-select: none;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: rgb(66, 59, 59);
+  }
+}
+
+.errors {
+  display: inline-block;
+  position: relative;
+  padding: 5px 5px;
+  margin-bottom: 5px;
+  border-radius: 0px 0px 5px 5px;
+  transition: 0.5s ease;
+  span,
+  i {
+    color: rgb(255, 0, 0);
+    font-size: 0.9rem;
+  }
+
+  span {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+#info-container {
+  transition-duration: 1s;
+  height: auto;
+  min-width: 300px;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(95, 94, 99, 0.6);
+  padding: 50px 30px;
+  form {
+    font-size: 1.1rem;
+    color: #000000;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+  }
+
+  .formError {
+    border: 2px solid red;
+    margin: 1px 0px;
+  }
+}
+
+.sign-input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-weight: 500;
+  border: 0.2px solid black;
+}
+
+#forms {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: 1s ease;
+
+  .username {
+    height: 50px;
+    width: 258px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    margin: 20px 5px;
+    font-weight: 300;
+    transition: 0.5s ease;
+  }
+}
+
+.userInfo {
+  transition: 0.5s ease;
+  width: 528px;
+  margin: -6px;
+}
+
+.submit-form {
+  display: block;
+  width: 100%;
+  padding: 0px 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #1c1f23;
+  color: white;
+}
+
+::placeholder {
+  color: #a1a1a1;
+  font-size: 0.9rem;
+}
+
+////////////login iconssssssssssssss////////////////////////////////
+
+.social {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s ease;
+
+  .local {
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding-top: 8px;
+  }
+}
+
+.social :nth-child(2) {
+  width: 242px;
+  font-weight: 300;
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #1c1f23;
+  color: rgb(252, 252, 252);
+}
+
+.loginIcon {
+  width: 242px;
+  margin: -4px;
+}
+
+#forgot {
+  text-align: center;
+  margin: 20px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+#resetPassword {
+  margin-bottom: 30px;
+  color: white;
+  h3 {
+    margin-bottom: 20px;
+  }
+}

@@ -42,6 +42,8 @@ mongoose.connect(
 );
 
 app.use("/contact", validationRules, validator);
+
+///////// limiter for limit message limit
 app.use(
   "/contact",
   rateLimiter(
@@ -56,7 +58,7 @@ app.use(
   )
 );
 
-
+////////////// limiter for limit site visits
 app.use(
   rateLimiter(
     1440,

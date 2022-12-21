@@ -113,7 +113,7 @@ export default function Contact() {
 
   return (
     <>
-      <section id="contact">
+      <section id="contact" className="reveal">
         <div id="contact_div">
           <div id="contact_header">
             <h1>Contact</h1>

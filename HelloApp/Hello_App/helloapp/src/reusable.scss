@@ -1,0 +1,131 @@
+$default_Light_Hover: rgba(109, 106, 106, 0.241);
+$default_dark_hover: black;
+$default_radius: 20px;
+
+// css for profileView and status view
+
+.default-items {
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 1s ease;
+  ul {
+    padding: 5px;
+    li {
+      padding: 5px;
+    }
+  }
+}
+
+// css for friends name list in sidechats and contacts
+
+.friendsName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 100%;
+  display: block;
+  width: 100%;
+  padding: 15px 15px;
+  text-decoration: none;
+}
+
+.back {
+  margin: 0px 2px;
+  font-size: 1.5rem;
+  padding-top: 6px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+.back:hover {
+  background: rgba(126, 122, 122, 0.432);
+  border-radius: 50%;
+}
+.backButton {
+  color: inherit;
+}
+
+.bio {
+  font-family: monospace !important;
+}
+
+.status {
+  display: inline-block;
+  width: fit-content;
+  padding: 4px;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+/////////////////////////
+
+.ERROR,
+.INFO {
+  padding: 5px 5px;
+  margin: 10px 5px;
+  width: 100%;
+  p {
+    color: red;
+    word-wrap: break-word;
+    font-family: monospace;
+    margin: 0px;
+    i {
+      color: inherit;
+      vertical-align: middle;
+      margin-right: 5px;
+      padding: 2px;
+    }
+  }
+}
+
+.INFO {
+  text-align: center;
+  p {
+    color: inherit;
+    font-size: 1rem;
+  }
+}
+
+.green {
+  p {
+    color: green;
+  }
+}
+
+.showPassword {
+  margin: 10px 10px 10px 0px;
+}
+
+#show_password {
+  //   border: 2px solid green;
+  width: 100%;
+  padding: 4px 0px;
+  #show_pwd-btn {
+    color: inherit;
+    padding: 5px 5px;
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+    border-radius: 5px;
+    span {
+      color: inherit;
+      font-family: monospace, system-ui, -apple-system;
+    }
+  }
+
+  #show_pwd-btn:hover {
+    background: rgba(81, 82, 84, 0.144);
+  }
+}
+
+.activated {
+  color: green !important;
+  font-family: monospace;
+}
+
+.deactivated {
+  color: red !important;
+  font-family: monospace;
+}

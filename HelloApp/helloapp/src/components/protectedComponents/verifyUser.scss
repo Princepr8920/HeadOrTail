@@ -1,0 +1,76 @@
+////// verifiction  screen /////////////////////////////////@at-root
+#verify-info-container {
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(95, 94, 99, 0.6);
+  padding: 20px 20px;
+  user-select: none;
+ 
+}
+.verify_email {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: rgb(66, 59, 59);
+ 
+}
+
+#hint {
+  word-wrap: break-word;
+  width: 400px;
+  padding: 10px;
+  margin: 10px;
+  background: #d4edda;
+  border-radius: 5px;
+  color: rgb(12, 53, 12);
+}
+
+.verificaion-input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.verificaion-input:nth-child(1) {
+  transition-duration: 1s;
+  letter-spacing: 1.1em;
+  padding-left: 15px;
+  width: 200px;
+}
+.verificaion-input:nth-child(1):focus {
+  border: 3px solid green;
+}
+.verificaion-input {
+  display: block;
+  height: 50px;
+  width: 200px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 3px;
+  font-weight: 500;
+  border: 0.2px solid black;
+  margin: 10px;
+}
+
+.formError {
+  border: 2px solid red;
+  margin: 1px 0px;
+}
+
+
+.verify_email_in_edit{
+  margin: 0px !important; 
+
+
+  input{
+     margin: 0px !important;
+     height: 38px !important;
+  }
+}

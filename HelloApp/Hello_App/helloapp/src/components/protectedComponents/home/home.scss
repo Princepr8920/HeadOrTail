@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#home {
+   padding:5px;
+   height: 100vh;
+   width: 100vw; 
+   position: relative;
+}
+
+#homeLayout {  
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; 
+  width: 100%;
+  height: 92%;
+  border-radius: 20px;
+  margin-top: 5px;
+  padding: 4px;
+ 
+}
+
+#liveView {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 19.5%; 
+  margin-left: 8px;
+  padding:5px;
+  transition: 1s ease;
+  //border:2px solid red;
+}

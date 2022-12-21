@@ -1,0 +1,59 @@
+.security_options {
+  //border:2px solid red;
+  width: 100%;
+  color: inherit;
+  margin-bottom: 10px;
+  ul {
+    color: inherit;
+    // border: 2px solid rgb(14, 228, 164);
+    padding: 0px !important;
+    width: 100%;
+    li {
+      color: inherit;
+      // border: 2px solid rgb(78, 14, 228);
+      border-radius: 5px;
+      margin: 10px 0px;
+    }
+  }
+}
+
+#change_password {
+  //border: 2px solid rgb(78, 14, 228);
+  width: 100%;
+  padding: 0px;
+  color:inherit;
+}
+
+.item_expended {
+  height: auto;
+  .change_password_form {
+    padding: 0px;
+    display: flex;
+  }
+}
+.item_collapsed {
+  height: 40px;
+  .change_password_form {
+    display: none;
+  }
+}
+
+.wide-list-btn {
+  color:inherit;
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 35px;
+  border-radius: 5px;
+  .span-flex {
+    pointer-events: none;
+    display: flex;
+    font-weight: 600;
+    color:inherit;
+    justify-content: space-between;
+  }
+}
+
+.wide-list-btn:hover {
+  background: rgba(81, 82, 84, 0.144);
+}

@@ -29,6 +29,22 @@ body::-webkit-scrollbar {
 }
  
 
+.reveal{
+  position: relative;
+  transform: translateY(0px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+ .active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+
+
+
 
 
  

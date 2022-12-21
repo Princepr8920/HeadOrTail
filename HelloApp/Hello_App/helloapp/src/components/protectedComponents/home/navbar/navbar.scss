@@ -1,0 +1,39 @@
+@import "/src/reusable.scss";
+
+.navbar {
+  position: relative;
+  left: 0.5%;
+  top: 4px;
+  width: 99%;
+  height: 7.5%;
+  border-radius: $default_radius;
+  padding: 0px;
+}
+
+.App_name {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color:inherit;
+}
+
+
+.profile_img {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  padding: 0px;  
+}
+ 
+#profile-icon { 
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#profile-icon:hover{
+  border: 2px solid rgb(5, 167, 236);
+}

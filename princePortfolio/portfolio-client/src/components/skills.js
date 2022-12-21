@@ -26,7 +26,7 @@ export default function Skills() {
   ];
   return (
     <>
-      <section id="skills">
+      <section id="skills" className="reveal">
         <div className="skill_info_container">
           <h1>About my skills</h1>
 

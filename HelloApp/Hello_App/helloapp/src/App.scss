@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=M+PLUS+Rounded+1c:wght@500&family=Orbitron&family=Quantico&family=Teko:wght@300&display=swap");
+* {
+  font-family: Comfortaa, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+}
+
+.light {
+  background: #f6f6f8;
+  transition: 1s ease;
+}
+
+.dark {
+  background: #010409;
+  transition: 1s ease;
+}
+
+.components_light_theme {
+  background: #ffffff;
+  color: #27282e;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.184);
+  border: 0.2px solid #00000045;
+}
+
+.components_dark_theme {
+  background: #0d1117;
+  color: aliceblue;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.184);
+  border: 0.2px solid rgba(250, 252, 250, 0.105);
+}
+
+.isLoading {
+  text-align: center;
+}
+
+#loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  h1 {
+    font-family: monospace;
+    font-size: 4rem;
+  }
+}

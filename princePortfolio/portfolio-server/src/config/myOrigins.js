@@ -1,5 +1,5 @@
 const origins = [ 
-  "https://prince8920-portfolio.herokuapp.com",
+  process.env.MY_URL,
   //"http://localhost:2500"
 ];
 

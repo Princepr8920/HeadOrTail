@@ -1,0 +1,90 @@
+@import "/src/reusable.scss";
+
+.sideChats {
+  height: 98.9%;
+  margin-top: 5px;
+  margin-left: 5px;
+  border-radius: $default_radius;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.collapsed {
+  width: 6.2%;
+  #nameList {
+    display: none;
+  }
+}
+
+.expend {
+  width: 20%;
+}
+
+#sideChats-header {
+  width: 100%;
+  height: 35px;
+  background: #888d9753;
+  border-radius: $default_radius;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+  span {
+    font-weight: bold;
+  }
+
+  #collapse-button {
+    background: transparent;
+    border-radius: $default_radius;
+    border: none;
+    text-align: center;
+    i {
+      font-size: 1.5rem;
+    }
+  }
+
+  #collapse-button:hover {
+    background: #595d6453;
+  }
+}
+
+.active-side-chats {
+  transition: 0.3s ease;
+  border-radius: $default_radius;
+  padding: 5px;
+  margin-top: 10px;
+  ul {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .friendsDp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+}
+
+.sideContacts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px !important;
+  width: 100%;
+  border-radius: $default_radius;
+}
+
+.sideContacts:hover {
+  background: $default_Light_Hover;
+}
+
+#imgList {
+  padding-top: 3px;
+}
+#nameList {
+  display: block;
+  width: 75%;
+  .friendsName {
+    color: inherit;
+  }
+}

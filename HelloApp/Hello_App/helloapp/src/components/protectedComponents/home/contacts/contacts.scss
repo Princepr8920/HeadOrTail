@@ -1,0 +1,91 @@
+@import "/src/reusable.scss";
+
+.contacts {
+  position: relative;
+  width: 80%;
+  height: 98.7%;
+  border-radius: $default_radius;
+  margin: 6px 0px 0px 2px;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.show-selected {
+  min-height: 8%;
+  border-radius: $default_radius;
+  margin: 0px;
+  ul { 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    li {
+   
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.friendZone {
+  transition: 0.3s ease;
+  box-shadow: none !important;
+  border: none !important;
+  margin-top: 10px;
+  ul {
+    margin-left: -20px;
+
+    .friendsList {
+      margin: 5px 0px 0px -10px;
+
+      #friends {
+        align-items: center;
+        display: flex;
+        margin: 0px;
+      }
+
+      #friends:hover {
+        background: #888d9753;
+        border-radius: $default_radius;
+      }
+    }
+
+   
+  }
+
+  #nameList {
+    display: block;
+    width: 100%; 
+    .friendsName{
+      color:inherit;
+    }
+  }
+
+
+
+  #imgList {
+    width: 70px;
+    height: 70px;
+  }
+
+  .friendsDp {
+    width: 60px;
+    height: 60px;
+    margin: 2px 2px 0px 2px;
+    border-radius: 50%;
+    display: inline-block;
+    border: none;
+  }
+
+  
+}
+
+.selectdLink {
+  display: block;
+  height: 100%;
+  margin: 20px;
+  text-decoration: none;
+  color:inherit;
+}

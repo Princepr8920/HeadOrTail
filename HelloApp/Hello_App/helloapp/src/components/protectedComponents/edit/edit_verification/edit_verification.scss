@@ -1,0 +1,95 @@
+.edit_verification {
+  width: 30%;
+  border-radius: 10px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#timer {
+  text-align: center;
+  background: rgba(228, 220, 220, 0.492);
+  border-radius: 10px;
+  width: 80%;
+  transition: 0.3 linear;
+  word-wrap: break-word;
+  height: 35px;
+  padding: 5px 10px 0px 10px;
+  span {
+    font-weight: 600;
+    width: 100%;
+    display: inline-block;
+  }
+  animation: fade 1s linear 0s backwards both;
+}
+
+.resend_code {
+  width: 80%;
+  height: 35px;
+  color: rgb(0, 101, 253);
+  font-family: monospace, Arial, Helvetica, sans-serif;
+  animation: fade 2s ease 0s backwards both;
+}
+
+.resend_code:hover {
+  text-decoration: underline;
+}
+
+@keyframes fade {
+  0% {
+    width: 1%;
+    opacity: 0;
+  }
+  100% {
+     width: 80%;
+    opacity: 0.9;
+  }
+}
+
+#otpForm,
+#submitOtp {
+  //  border:2px solid red;
+  padding: 20px;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#submitOtp {
+  input {
+    width: 100%;
+    font-weight: 800;
+  }
+}
+
+button:disabled {
+  color: rgba(76, 76, 76, 0.502);
+  text-decoration: underline;
+}
+
+.otp {
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 6px;
+  outline: none;
+  background: rgba(201, 193, 193, 0.544);
+  caret-color: transparent;
+}
+
+.otp:focus {
+  border: 3px solid rgba(7, 129, 222, 0.65);
+  box-shadow: 0px 0px 1px 1px rgba(7, 129, 222, 0.65);
+}
+.otp:hover {
+  border: 3px solid rgba(7, 129, 222, 0.65);
+  box-shadow: 0px 0px 1px 1px rgba(7, 129, 222, 0.65);
+}

@@ -4,9 +4,12 @@ import About from "./components/about";
 import Skills from "./components/skills";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
+import reveal from "./reveal";
 import "./App.scss";
 
 function App() {
+  window.addEventListener("scroll", reveal);
+  
   return (
     <>
       <Navbar />

@@ -1,0 +1,34 @@
+@import "/src/reusable.scss";
+
+.statusView {
+  width: 100%;
+  height: 49.2%;
+  border-radius: $default_radius;
+  padding: 5px;
+  transition: 0.5s ease; 
+  margin-top: 7px;
+}
+
+.shrink {
+  height: 2% !important;
+  opacity: 0.6;
+  div{
+    opacity: 0;
+  }
+}
+
+.controls {
+  button {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding-top: 6px;
+
+    i {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+}

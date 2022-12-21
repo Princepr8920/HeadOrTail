@@ -14,7 +14,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about">
+    <section id="about" className="reveal">
       <div id="prince_div">
         <div className="circle">
           <div className="circle--image">
