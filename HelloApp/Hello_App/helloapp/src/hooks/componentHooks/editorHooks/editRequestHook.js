@@ -6,15 +6,12 @@ export default function useSecurityEdit() {
   const { setAuth } = useAuth();
   async function SUBMIT_DATA(info) {
     let url = "user/profile/edit";
-    const {
-      data: { message, success, user },
-      status,
-    } = await PATCH(info, url);
+    const { data, status } = await PATCH(info, url);
     if (status === 200) {
-      setAuth((rest) => ({ ...rest, user }));
+      setAuth((rest) => ({ ...rest, user: data.user }));
     }
-
-    return { message, status, success };
+    console.log(data)
+    return { data, status };
   }
 
   return SUBMIT_DATA;

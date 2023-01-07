@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useSignup from "../../hooks/componentHooks/signupHook";
-import ERROR from "../reuseableComponents/informativeComponents/ERROR";
-import Ellipsis from "../reuseableComponents/loadingComponents/ellipsis";
-
+import ERROR from "../usefulComponents/informativeComponents/ERROR";
+import Ellipsis from "../usefulComponents/loadingComponents/ellipsis";
 import "./login&signupCss.scss";
 
 export default function Signup() {
@@ -11,15 +10,24 @@ export default function Signup() {
   const [getValue, setValue] = useState({
     email: "",
     password: "",
+    confirm_password: "",
     username: "",
     first_name: "",
     last_name: "",
-    error: null,
-    isLoaded: true,
+    error: { inputError: null, otherError: null },
+    isLoaded: true, 
   });
 
-  const { email, password, username, first_name, last_name, isLoaded, error } =
-    getValue;
+  const {
+    email,
+    password,
+    username,
+    first_name,
+    last_name,
+    confirm_password,
+    isLoaded, 
+    error,
+  } = getValue;
 
   function handleChange(e) {
     const { value, name } = e.target;
@@ -28,19 +36,24 @@ export default function Signup() {
 
   async function submitData(e) {
     e.preventDefault();
-    setValue((rest) => ({ ...rest, isLoaded: false }));
-    const { message, status } = await SUBMIT_DATA({
+    setValue((rest) => ({ ...rest, isLoaded: false,   }));
+    const { status, data } = await SUBMIT_DATA({
       email,
       password,
       username,
       first_name,
       last_name,
+      confirm_password,
     });
     status !== 202
       ? setValue((rest) => ({
           ...rest,
-          error: { message, status },
-          isLoaded: true,
+          error: {
+            inputError: data?.inputError,
+            otherError:
+              status !== 400 ? { message: data?.message, status } : null,
+          },
+          isLoaded: true, 
         }))
       : setValue((rest) => ({
           ...rest,
@@ -49,11 +62,13 @@ export default function Signup() {
           username: "",
           first_name: "",
           last_name: "",
-          error: null,
-          isLoaded: true,
+          confirm_password: "",
+          error: { inputError: null, otherError: null },
+          isLoaded: true, 
         }));
   }
 
+ 
   return (
     <div className="login-container">
       <div id="info-container">
@@ -72,6 +87,7 @@ export default function Signup() {
                 required
               />
             </div>
+            <ERROR error={error?.inputError?.first_name} />
             <div key="lastName" className="input-container">
               <input
                 type="input"
@@ -83,16 +99,11 @@ export default function Signup() {
                 maxLength="30"
               />
             </div>
+            <ERROR error={error?.inputError?.last_name} />
             <div key="email" className="input-container">
               <input
                 type="email"
-                className={
-                  error &&
-                  error.status === 409 &&
-                  error.message !== "That username is taken. Try another"
-                    ? "userInfo sign-input formError"
-                    : "userInfo sign-input"
-                }
+                className={"userInfo sign-input"}
                 name="email"
                 value={email}
                 onChange={handleChange}
@@ -100,16 +111,11 @@ export default function Signup() {
                 required
               />
             </div>
+            <ERROR error={error?.inputError?.email} />
             <div key="username" className="input-container">
               <input
                 type="input"
-                className={
-                  error &&
-                  error.status === 409 &&
-                  error.message !== "Email already registered"
-                    ? "userInfo sign-input formError"
-                    : "userInfo sign-input"
-                }
+                className={"userInfo sign-input"}
                 name="username"
                 value={username}
                 onChange={handleChange}
@@ -118,24 +124,33 @@ export default function Signup() {
                 required
               />
             </div>
+            <ERROR error={error?.inputError?.username} />
             <div key="password" className="input-container">
               <input
-                type="password"
+                type="text"
                 name="password"
-                className={
-                  error && error.status === 401
-                    ? "userInfo sign-input formError"
-                    : "userInfo  sign-input"
-                }
+                className={"userInfo  sign-input"}
                 value={password}
                 onChange={handleChange}
                 placeholder="Password"
                 required
-                autoComplete=""
               />
             </div>
-          </div>{" "}
-         <ERROR error={error} />  
+            <ERROR error={error?.inputError?.password} />
+            <div key="confirmPassword" className="input-container">
+              <input
+                type="text"
+                name="confirm_password"
+                className={"userInfo  sign-input"}
+                value={confirm_password}
+                onChange={handleChange}
+                placeholder="Re-enter your Password"
+                required
+              />
+            </div>
+            <ERROR error={error?.inputError?.confirm_password} />
+          </div>
+          <ERROR error={error?.otherError} />
           {!isLoaded ? (
             <Ellipsis />
           ) : (
@@ -147,11 +162,15 @@ export default function Signup() {
           )}
         </form>
 
-        <div className="social">
-          <Link to="/login" className="submit-form sign-input local" replace>
-            Login
-          </Link>
-        </div>
+        {isLoaded ? (
+          <div className="social">
+            <Link to="/login" className="submit-form sign-input local" replace>
+              Login
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

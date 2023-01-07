@@ -8,7 +8,7 @@ const useAxiosPrivate = () => {
   const { auth } = useAuth();
   useEffect(() => {
     const requestIntercept = privateAxios.interceptors.request.use(
-      (config) => {
+      (config) => { 
         if (!config.headers["Authorization"]) {
           config.headers["Authorization"] = `Bearer ${auth?.accessToken}`;
         } 
@@ -35,7 +35,7 @@ const useAxiosPrivate = () => {
       privateAxios.interceptors.response.eject(responseIntercept);
     };
   }, [auth, refresh]);
-  return useAxiosPrivate;
+  return privateAxios;
 };
 
 export default useAxiosPrivate;

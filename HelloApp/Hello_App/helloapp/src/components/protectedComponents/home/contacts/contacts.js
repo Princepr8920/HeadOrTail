@@ -1,32 +1,28 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./contacts.scss";
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import useGetHook from "../../../../hooks/httpHooks/useGetHook";
 import useTheme from "../../../../hooks/usefulHooks/useTheme";
-import Spinner from "../../../reuseableComponents/loadingComponents/spinner"
+import Spinner from "../../../usefulComponents/loadingComponents/spinner";
+import useView from "../../../../hooks/usefulHooks/useView";
+
 export default function Contacts() {
- const GET = useGetHook();
- const {
+  const { setView, view } = useView();
+  const GET = useGetHook();
+  const {
     theme: {
       theme_profile: { components_background },
     },
-  } = useTheme(); 
+  } = useTheme();
 
-  const [getUsers, setUsers] = useState({
-    users: [],
-    isLoaded : false
-  });
-
-  useEffect(() => { 
+  useEffect(() => {
     async function fetchData() {
       const getUsers = await GET("getUsers");
-      setUsers((rest) => ({ ...rest, users: getUsers.data ,  isLoaded: true}));
+      setView((rest) => ({ ...rest, contacts: getUsers.data, isLoaded: true }));
     }
     fetchData();
   }, []);
-
-
 
   return (
     <section className={`contacts ${components_background} `}>
@@ -54,35 +50,37 @@ export default function Contacts() {
       </nav>
 
       <div className={`friendZone  ${components_background}`}>
+        {view.isLoaded ? (
+          <ul>
+            {view.contacts.map((user) => {
+              return (
+                <li className="friendsList" key={user.username}>
+                  <ul id="friends">
+                    <li id="imgList">
+                      <input
+                        type="image"
+                        className="friendsDp"
+                        src={user.picture}
+                        alt="profile_img"
+                      />
+                    </li>
 
-        {getUsers.isLoaded ? <ul>
-          {getUsers.users.map((user) => {
-            return (
-              <li className="friendsList" key={user.username}>
-                <ul id="friends">
-                  <li id="imgList">
-                    <input
-                      type="image"
-                      className="friendsDp"
-                      src={user.picture}
-                      alt="profile_img"
-                    />
-                  </li>
-
-                  <li id="nameList">
-                    <Link
-                      className="friendsName"
-                      to={`/chats/${user.username}`}
-                    >
-                      {user.username}
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-            );
-          })}
-        </ul> : <Spinner/> }
-
+                    <li id="nameList">
+                      <Link
+                        className="friendsName"
+                        to={`/chats/${user.username}`}
+                      >
+                        {user.username}
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <Spinner />
+        )}
       </div>
     </section>
   );

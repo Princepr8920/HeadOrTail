@@ -2,9 +2,9 @@ import React from "react";
 import useDeleteHook from "../../../../../hooks/httpHooks/useDeleteHook";
 import useAuth from "../../../../../hooks/usefulHooks/useAuth";
 import useView from "../../../../../hooks/usefulHooks/useView";
-import ERROR from "../../../../reuseableComponents/informativeComponents/ERROR";
+import ERROR from "../../../../usefulComponents/informativeComponents/ERROR";
 import "./danger.scss";
-import Ellipsis from "../../../../reuseableComponents/loadingComponents/ellipsis";
+import Ellipsis from "../../../../usefulComponents/loadingComponents/ellipsis";
 
 export default function Danger_Zone() {
   const DELETE = useDeleteHook();
@@ -28,7 +28,7 @@ export default function Danger_Zone() {
       return setView((rest) => ({
         ...rest,
         isLoaded: true,
-        error: { message, success },
+        error:  { inputError: null, otherError: {message,status} },
       }));
     }
   }
@@ -58,7 +58,7 @@ export default function Danger_Zone() {
             </li>
           </ul>
         </form>
-        {!view.isLoaded ? <Ellipsis /> : <ERROR error={view.error} />}
+        {!view.isLoaded ? <Ellipsis /> : <ERROR error={view?.error?.otherError} />}
       </section>
     </>
   );

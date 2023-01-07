@@ -1,6 +1,7 @@
 const express = require("express"),
   app = express(),
   logger = require("morgan"),
+  donenv = require("dotenv").config(),
   mongoose = require("mongoose"),
   bodyParser = require("body-parser"),
   cors = require("cors"),
@@ -27,7 +28,7 @@ app.use(
 );
 app.set('trust proxy', 1);
 app.use(logger("dev"));
-require("dotenv").config();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -43,7 +44,7 @@ mongoose.connect(
 
 app.use("/contact", validationRules, validator);
 
-///////// limiter for limit message limit
+///////// limiter for limit message
 app.use(
   "/contact",
   rateLimiter(

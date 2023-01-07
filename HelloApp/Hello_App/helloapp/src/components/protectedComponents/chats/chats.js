@@ -11,14 +11,12 @@ import useTheme from "../../../hooks/usefulHooks/useTheme";
 export default function Chats() { 
   const {theme:{theme_profile:{components_background}}} = useTheme()
   const GET = useGetHook()
-  let { view, setView } = useView();
+  let { view } = useView();
   let params = useParams();
   let { username } = params; 
   let [getUser, setUser] = useState({
     user: {},
   });
-
- 
 
   useEffect(()=>{
     async function fetchData() {
@@ -28,7 +26,6 @@ export default function Chats() {
    fetchData()
   },[username])
  
-  
  
   return (
     <div className={`chats-container ${components_background}`}>

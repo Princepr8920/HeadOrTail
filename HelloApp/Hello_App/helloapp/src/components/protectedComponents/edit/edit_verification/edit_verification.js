@@ -3,12 +3,12 @@ import "./edit_verification.scss";
 import useTheme from "../../../../hooks/usefulHooks/useTheme";
 import useAuth from "../../../../hooks/usefulHooks/useAuth";
 import useView from "../../../../hooks/usefulHooks/useView";
-import ERROR from "../../../reuseableComponents/informativeComponents/ERROR";
-import Info from "../../../reuseableComponents/informativeComponents/INFO";
-import Ellipsis from "../../../reuseableComponents/loadingComponents/ellipsis";
-import Countdown from "../../../reuseableComponents/otherComponents/countdown";
+import ERROR from "../../../usefulComponents/informativeComponents/ERROR";
+import Info from "../../../usefulComponents/informativeComponents/INFO";
+import Ellipsis from "../../../usefulComponents/loadingComponents/ellipsis";
+import Countdown from "../../../usefulComponents/otherComponents/countdown";
 import useVerificationHook from "../../../../hooks/componentHooks/verificationHook";
-
+import Header from "../../reuseableComponents/header";
 export default function Edit_verification({ cancel_verification }) {
   const { SUBMIT_CODE, RESEND_CODE } = useVerificationHook();
   const { auth } = useAuth();
@@ -130,15 +130,7 @@ export default function Edit_verification({ cancel_verification }) {
   return (
     <>
       <div className={`edit_verification ${components_background}`}>
-        <div className={`${components_background} edit_header`}>
-          <div className="back">
-            <button className="backButton" onClick={cancel_verification}>
-              <i className="fa fa-arrow-left" aria-hidden="true"></i>
-            </button>
-          </div>
-          <h4>Email verification</h4>
-        </div>
-
+        <Header name={"Email verification"} link={false} backClick={cancel_verification} />
         <form id="otpForm" ref={otpForm}>
           <input
             onChange={handleChange}

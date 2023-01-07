@@ -10,14 +10,12 @@ export default function useSignup() {
   async function SUBMIT_DATA(info) {
     const response = await POST(info, "signup");
     console.log(response);
-    if (!response?.data?.success) {
-      const { message, status } = response.data;
-      return { message: message, status: status };
-    } else {
+    if (response?.data?.success) {
       setAuth(response?.data);
       navigate("/verify/user/account", { replace: true });
-      return { message: response.data.message, status: response.data.status };
     }
+    const { status, data } = response;
+    return { status, data };
   }
 
   return SUBMIT_DATA;

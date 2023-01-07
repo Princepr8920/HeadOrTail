@@ -8,9 +8,9 @@ import Timeline from "./elements/edit_timeline";
 import Tasks from "./elements/edit_tasks";
 import Danger_Zone from "./elements/edit_danger";
 import useView from "../../../../hooks/usefulHooks/useView";
-import Edit_Success from "../../../reuseableComponents/success/success";
+import Edit_Success from "../../../usefulComponents/success/success";
 import Edit_verification from "../edit_verification/edit_verification";
-
+import Header from "../../reuseableComponents/header";
 export default function Editor_Box({ disableEdit, FieldName }) {
   const {
     theme: {
@@ -34,14 +34,7 @@ export default function Editor_Box({ disableEdit, FieldName }) {
       <section id="editor_box_container">
         {!view.edit_operation.success && view.verification.isVerified ? (
           <div className={`editor_Box ${components_background}`}>
-            <div className={`${components_background} edit_header`}>
-              <div className="back">
-                <button className="backButton" onClick={disableEdit}>
-                  <i className="fa fa-arrow-left" aria-hidden="true"></i>
-                </button>
-              </div>
-              <h4>{FieldName}</h4>
-            </div>
+            <Header name={FieldName} link={false} backClick={disableEdit} />
             <div id="fields">
               {elements.map((e) => (e.name === FieldName ? e.JSX : ""))}
             </div>
@@ -49,7 +42,7 @@ export default function Editor_Box({ disableEdit, FieldName }) {
         ) : !view.verification.isVerified ? (
           <Edit_verification cancel_verification={disableEdit} />
         ) : (
-          <Edit_Success disableEdit={disableEdit}/>
+          <Edit_Success disableEdit={disableEdit} />
         )}
       </section>
     </>

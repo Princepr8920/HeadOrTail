@@ -28,12 +28,29 @@ $default_radius: 20px;
   text-decoration: none;
 }
 
+/////////////// header css start ///////////////
+
+.Header {
+  width: 100%;
+  // border: 2px solid red;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  h4 {
+    font-weight: 800;
+    margin: 0px 0px 0px 5px;
+  }
+}
+
 .back {
   margin: 0px 2px;
-  font-size: 1.5rem;
-  padding-top: 6px;
-  width: 40px;
-  height: 40px;
+  font-size: 1.3rem;
+  padding-top: 4px;
+  width: 35px;
+  height: 35px;
   text-align: center;
 }
 .back:hover {
@@ -43,6 +60,8 @@ $default_radius: 20px;
 .backButton {
   color: inherit;
 }
+
+/////////////// header css end ///////////////
 
 .bio {
   font-family: monospace !important;
@@ -60,8 +79,9 @@ $default_radius: 20px;
 
 .ERROR,
 .INFO {
-  padding: 5px 5px;
-  margin: 10px 5px;
+  // border: 2px solid red;
+  padding: 3px 3px;
+   margin: 2px 0px;
   width: 100%;
   p {
     color: red;
@@ -121,7 +141,7 @@ $default_radius: 20px;
 }
 
 .activated {
-  color: green !important;
+  color: green !important; 
   font-family: monospace;
 }
 

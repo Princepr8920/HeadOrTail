@@ -1,7 +1,8 @@
-import axios from "../../api/axios";
+import useAxiosPrivate from "../usefulHooks/useAxiosPrivate"
 import noNested from "../../modules/noNested";
 
 export default function usePatchHook() {
+  const axiosPrivate = useAxiosPrivate()
   async function PATCH(info, link) {
     let url = `/${link}`;
 
@@ -15,7 +16,7 @@ export default function usePatchHook() {
     };
  
     try {
-      const sendData = await axios.patch(url, data, option);   
+      const sendData = await axiosPrivate.patch(url, data, option);   
       return noNested(sendData, ["status", "message", "data"], ["data"]);
     }  catch (err) {
       const error = err.response

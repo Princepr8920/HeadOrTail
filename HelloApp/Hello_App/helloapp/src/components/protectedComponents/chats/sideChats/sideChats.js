@@ -1,32 +1,20 @@
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useGetHook from "../../../../hooks/httpHooks/useGetHook";
 import useTheme from "../../../../hooks/usefulHooks/useTheme";
 import useView from "../../../../hooks/usefulHooks/useView";
 import "./sideChats.scss";
- 
-
 
 export default function SideChats() {
-  const {theme:{theme_profile:{components_background}}} = useTheme()
- const GET = useGetHook()
+  const {
+    theme: {
+      theme_profile: { components_background },
+    },
+  } = useTheme();
   const { view, setView } = useView();
   const [getItem, setItem] = useState({
     collapse: false,
-    users:[]
   });
-
-
-  useEffect(()=>{
-    async function fetchData() {
-    const getUsers = await GET("getUsers")
-   setItem((rest) => ({ ...rest, users: getUsers.data }));
-    }
-   fetchData()
-  },[])
- 
 
   function handleSideChats() {
     let { collapse } = getItem;
@@ -63,24 +51,18 @@ export default function SideChats() {
         </button>
       </div>
       <div className="active-side-chats">
-
         <ul>
-          {getItem.users?.map((user) => {
+          {view.contacts?.map((contact) => {
             return (
-              <li key={user?.username}>
+              <li key={contact?.username}>
                 <ul className="sideContacts">
                   <li id="imgList">
-                   
-                   
                     {getItem.collapse ? (
-                      <Link 
-                        to={`/chats/${user?.username}`}
-                        replace
-                      >
+                      <Link to={`/chats/${contact?.username}`} replace>
                         <img
                           className="friendsDp"
-                          src={user?.picture}
-                          title={getItem.collapse ? user?.username : ""}
+                          src={contact?.picture}
+                          title={getItem.collapse ? contact?.username : ""}
                           alt="profile_img"
                         />
                       </Link>
@@ -88,25 +70,22 @@ export default function SideChats() {
                       <input
                         type="image"
                         className="friendsDp"
-                        src={user?.picture}
-                        title={getItem.collapse ? user?.username : ""}
+                        src={contact?.picture}
+                        title={getItem.collapse ? contact?.username : ""}
                         alt="profile_img"
                       />
                     )}
-
-
                   </li>
                   <li id="nameList">
-                    <Link className="friendsName"
-                      to={`/chats/${user?.username}`}
+                    <Link
+                      className="friendsName"
+                      to={`/chats/${contact?.username}`}
                       replace
                     >
-                      {user?.username}
+                      {contact?.username}
                     </Link>
                   </li>
                 </ul>
-
-
               </li>
             );
           })}

@@ -11,7 +11,8 @@ export function ViewProvider({ children }) {
     isUnlocked:false,
     waiting:false, 
     isLoaded:true,
-    error:null
+    error: { inputError: null, otherError: null },
+    contacts:[]
   });
  
   return (

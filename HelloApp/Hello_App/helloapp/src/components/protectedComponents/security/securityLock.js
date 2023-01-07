@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react"; 
 import usePostHook from "../../../hooks/httpHooks/usePostHook";
 import useAuth from "../../../hooks/usefulHooks/useAuth";
 import useTheme from "../../../hooks/usefulHooks/useTheme";
 import useView from "../../../hooks/usefulHooks/useView";
-import ERROR from "../../reuseableComponents/informativeComponents/ERROR";
-import Ellipsis from "../../reuseableComponents/loadingComponents/ellipsis";
+import ERROR from "../../usefulComponents/informativeComponents/ERROR";
+import Ellipsis from "../../usefulComponents/loadingComponents/ellipsis";
+import Header from "../reuseableComponents/header";
 import "./securityLock.scss";
 
 export default function SecurityLock() {
@@ -52,31 +52,27 @@ export default function SecurityLock() {
     <>
       <section id="security_Lock">
         <div className={`${components_background} security_code`}>
-          <div className={`${components_background} edit_header`}>
-            <div className="back">
-              <Link to="/" className="backButton">
-                <i className="fa fa-arrow-left" aria-hidden="true"></i>
-              </Link>
-            </div>
-            <h4>Enter Password</h4>
-          </div>
-          <div id="security_form_div">
+          <Header name={"Confirm access"} link={true}/>
+          <div>
             <form onSubmit={handleSubmit} className="edit_form">
-              <input
-                type="input"
-                onChange={handleChange}
-                value={securityCode}
-                name="securityCode"
-                id="securityCode"
-                placeholder="Please enter your password"
-              />
-             <ERROR error={item.error} /> 
+              <div className="edit_inputs">
+                <label htmlFor="securityCode">Enter Password</label>
+                <input
+                  type="input"
+                  onChange={handleChange}
+                  value={securityCode}
+                  name="securityCode"
+                  id="securityCode"
+                  placeholder="Please enter your password"
+                />
+              </div>
+              <ERROR error={item.error} />
               {!item.isLoaded ? (
                 <Ellipsis />
               ) : (
                 <input
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-dark"
                   name="submitPassword"
                   id="submitPassword"
                 />

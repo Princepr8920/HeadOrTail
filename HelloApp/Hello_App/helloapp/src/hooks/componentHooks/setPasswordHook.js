@@ -10,7 +10,7 @@ export default function useSetPassword() {
   async function SET_PASSWORD(password) {
     let {
       status, data:{message,success},
-    } = await POST(password, `user/${id}/password/setnewpassword/${token}`);
+    } = await POST(password, `user/password/setnewpassword/${token}`);
     console.log(message,success)
     if (status !== 200) {
       return {

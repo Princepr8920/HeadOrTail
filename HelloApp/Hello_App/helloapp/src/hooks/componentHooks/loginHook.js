@@ -12,12 +12,12 @@ export default function useLogin() {
 
   async function SUBMIT_DATA(info) {
     const response = await POST(info, "login");  
-    if (!response?.data?.success) { 
-      return { message: response.data.message, status: response.data.status };
+    if (response.status !== 200 && response.status !== 202) { 
+      return { message: response.data.message, status: response.status };
     } else {
       const { data, status } = response;
       if (status === 202) {
-        setAuth(response.data);
+        setAuth(data);
         navigate("/verify/user/account", { replace: true });
       } else {
         const { user, accessToken } = data;

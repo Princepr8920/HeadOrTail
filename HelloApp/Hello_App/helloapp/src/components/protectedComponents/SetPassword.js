@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useSetPassword from "../../hooks/componentHooks/setPasswordHook";
-import Spinner from "../reuseableComponents/loadingComponents/spinner";
+import Spinner from "../usefulComponents/loadingComponents/spinner";
 
 export default function SetPassword() {
   const SET_PASSWORD = useSetPassword();

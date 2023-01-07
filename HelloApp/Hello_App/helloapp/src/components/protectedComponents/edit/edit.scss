@@ -1,4 +1,4 @@
-@import "../../../reusable.scss";
+@import "../../../reuseable.scss";
 
 .edit_Section {
   overflow-y: auto;
@@ -26,28 +26,11 @@
   top: 0%;
   left: 0%;
 }
-
-////////////////
  
-  button {
-    border: none;
-    background: none;
-  }
 
-.edit_header {
-  width: 100%;
-  // border: 2px solid red;
-  height: 50px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  h4 {
-    font-weight: 800;
-    margin: 0px 0px 0px 5px;
-  }
-
- 
-  
+button {
+  border: none;
+  background: none;
 }
 
 #edit_container {
@@ -95,7 +78,7 @@
 
   .edit_personal_info {
     width: 62%;
-    pointer-events: none; 
+    pointer-events: none;
   }
 }
 
@@ -105,18 +88,18 @@
   border-radius: 10px;
   width: 305px;
   min-height: 305px;
-  height:inherit; 
+  height: inherit;
   transition: 0.2s ease;
- // border: 2px solid rgb(0, 204, 255);
+  // border: 2px solid rgb(0, 204, 255);
 }
 
 .edit_profile_img_div {
- // border: 2px solid rgb(9, 255, 0);
+  // border: 2px solid rgb(9, 255, 0);
   position: relative;
   display: inline-block;
   width: 35%;
   height: 100%;
-  
+
   input {
     display: none;
   }
@@ -126,7 +109,7 @@
   opacity: 0.9;
 }
 .overlay {
- // border: 2px solid rgb(9, 255, 0);
+  // border: 2px solid rgb(9, 255, 0);
   cursor: pointer;
   position: absolute;
   top: 0;

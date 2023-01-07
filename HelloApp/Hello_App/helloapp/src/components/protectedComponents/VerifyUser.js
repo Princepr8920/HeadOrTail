@@ -24,20 +24,35 @@ export const VerifyUser = () => {
     navigate(from, { replace: true });
   }
 
+  function handleChange(e){
+setValue((rest) => ({
+        ...rest,
+        input: e.target.value,
+        error: "",
+      }))
+    
+    // /(^[0-9]{6}$)/.test(e.target.value)
+    // ? setValue((rest) => ({
+    //     ...rest,
+    //     input: e.target.value,
+    //     error: "",
+    //   }))
+    // : console.log("hello")
+  }
+
   async function submitData(e) {
     e.preventDefault();
-    let response = await POST({ code: getValue.input }, "verify/user/account");
-    if (response?.error) {
-      const { message, status } = response.error;
+    let {status,data:{message,user}} = await POST({ code: getValue.input }, "verify/user/account");
+    if (status !== 200) { 
       setValue((rest) => ({
         ...rest,
         error: {
-          message: message,
-          status: status,
+          message,
+          status,
         },
       }));
     } else {
-      validUser(response?.data);
+     return validUser(user);
     }
   }
 
@@ -72,15 +87,7 @@ export const VerifyUser = () => {
               type="input"
               name="code"
               value={getValue.input}
-              onChange={(e) =>
-                /(^[0-9]*$)/.test(e.target.value)
-                  ? setValue((rest) => ({
-                      ...rest,
-                      input: e.target.value,
-                      error: "",
-                    }))
-                  : ""
-              }
+              onChange={handleChange}
               maxLength="6"
               required
             />

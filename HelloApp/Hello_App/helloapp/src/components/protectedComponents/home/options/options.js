@@ -6,7 +6,7 @@ import useTheme from "../../../../hooks/usefulHooks/useTheme";
 import useAuth from "../../../../hooks/usefulHooks/useAuth";
 
 export default function Options() {
-  const { auth } = useAuth();
+  const { auth,setAuth } = useAuth();
   const LOGOUT = useLogout();
 
   const options = [
@@ -34,7 +34,7 @@ export default function Options() {
           ? "components_light_theme"
           : "components_dark_theme",
       },
-    });
+    }); 
   }
 
   let themeIcon = darkTheme ? "moon.png" : "sun.png";

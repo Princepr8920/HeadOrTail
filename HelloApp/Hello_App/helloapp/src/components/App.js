@@ -18,7 +18,7 @@ import Success from "./emailSuccess/Success";
 import EmailSuccess from "./emailSuccess/emailSuccess";
 import Chats from "./protectedComponents/chats/chats";
 import useView from "../hooks/usefulHooks/useView";
-  import SecurityOutlet from "./auth/outlets/securityOutlet";
+import SecurityOutlet from "./auth/outlets/securityOutlet";
  
 function App() {
   let { setView } = useView();
@@ -43,7 +43,7 @@ function App() {
             <Route path="email/success" element={<EmailSuccess />} />
             <Route path="success" element={<Success />} />
             <Route
-              path="user/:id/passwordrecovery/setnewpassword/:token"
+              path="user/passwordrecovery/setnewpassword/:token"
               element={<SetPassword />}
             />
           </Route>

@@ -1,21 +1,20 @@
- import axios from "../../api/axios";
 import noNested from "../../modules/noNested";
- 
+import useAxiosPrivate from "../usefulHooks/useAxiosPrivate";
+
 export default function useGetHook() {
+  const axiosPrivate = useAxiosPrivate();
+
   async function GET(link) {
     let url = `/${link}`;
-    let option = {
-      withCredentials: true,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
-    };
 
     try {
-      const getData = await axios.get(url, option); 
-      return noNested(getData, ["status", "message", "data"], ["data"]);
-    }  catch (err) {
+      const controller = new AbortController();
+      const getData = await axiosPrivate.get(url, {
+        signal: controller.signal,
+      });
+      controller.abort();
+      return noNested(getData, ["status", "data"], ["data"]);
+    } catch (err) {
       const error = err.response
         ? noNested(err, ["status", "data"], ["data"])
         : {

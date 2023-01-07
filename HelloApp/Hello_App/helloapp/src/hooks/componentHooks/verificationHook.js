@@ -14,6 +14,7 @@ export default function useVerificationHook() {
       data: { message, success, user },
       status,
     } = await POST(info, "user/email/verification/done");
+    console.log(message)
     if (status === 200) {
       setAuth((rest) => ({ ...rest, user }));
       setView((rest) => ({

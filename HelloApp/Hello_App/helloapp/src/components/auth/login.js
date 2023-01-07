@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import useLogin from "../../hooks/componentHooks/loginHook";
-import Ellipsis from "../reuseableComponents/loadingComponents/ellipsis";
+import Ellipsis from "../usefulComponents/loadingComponents/ellipsis";
 import "./login&signupCss.scss";
-import ERROR from "../reuseableComponents/informativeComponents/ERROR";
+import ERROR from "../usefulComponents/informativeComponents/ERROR";
 
 export default function Login() {
   const SUBMIT_DATA = useLogin(),
@@ -26,7 +26,7 @@ export default function Login() {
     e.preventDefault();
     setValue((rest) => ({ ...rest, isLoaded: false }));
     const { message, status } = await SUBMIT_DATA({ email, password });
-    status !== 200
+    status !== 200 && status !== 202
       ? setValue((rest) => ({
           ...rest,
           error: { message, status },
@@ -99,11 +99,15 @@ export default function Login() {
           ""
         )}
 
-        <div className="social">
-          <Link to="/signup" className="submit-form sign-input local" replace>
-            Signup
-          </Link>
-        </div>
+        {isLoaded ? (
+          <div className="social">
+            <Link to="/signup" className="submit-form sign-input local" replace>
+              Signup
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

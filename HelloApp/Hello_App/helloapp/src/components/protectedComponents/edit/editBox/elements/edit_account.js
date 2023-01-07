@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import "./account.scss";
 import useAuth from "../../../../../hooks/usefulHooks/useAuth";
 import useUpdate from "../../../../../hooks/usefulHooks/useUpdate";
-import Ellipsis from "../../../../reuseableComponents/loadingComponents/ellipsis";
-import ERROR from "../../../../reuseableComponents/informativeComponents/ERROR";
+import Ellipsis from "../../../../usefulComponents/loadingComponents/ellipsis";
+import ERROR from "../../../../usefulComponents/informativeComponents/ERROR";
 import useEditRequest from "../../../../../hooks/componentHooks/editorHooks/editRequestHook";
 import useView from "../../../../../hooks/usefulHooks/useView";
-import Info from "../../../../reuseableComponents/informativeComponents/INFO";
+import Info from "../../../../usefulComponents/informativeComponents/INFO";
 
 export default function Account() {
-  const { setView, view } = useView();
+  const {
+    setView,
+    view: { error, isLoaded },
+  } = useView();
   const SUBMIT_DATA = useEditRequest();
 
   const {
@@ -28,27 +31,34 @@ export default function Account() {
     e.preventDefault();
     const { name, value } = e.target;
     setInput((rest) => ({ ...rest, [name]: value }));
-    setView((rest) => ({ ...rest, error: null }));
+    setView((rest) => ({
+      ...rest,
+      error: { inputError: null, otherError: null },
+    }));
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
     setView((rest) => ({ ...rest, isLoaded: false }));
-    const { message, status, success } = await SUBMIT_DATA({
-      userID: user.userID,
-      update: UPDATED_FIELDS(input, user),
-    }); 
+    const { data, status } = await SUBMIT_DATA(UPDATED_FIELDS(input, user));
     if (status === 200) {
-      setView((rest) => ({ ...rest, edit_operation: { success, message } }));
+      setView((rest) => ({
+        ...rest,
+        edit_operation: { success: data.success, message: data.message },
+      }));
     } else if (status === 202) {
       setView((rest) => ({
         ...rest,
-        verification: { isVerified: false, message: message },
+        verification: { isVerified: false, message: data.message },
       }));
     } else {
       setView((rest) => ({
         ...rest,
-        error: { status, message },
+        error: {
+          inputError: data?.inputError,
+          otherError:
+            status !== 400 ? { message: data?.message, status } : null,
+        },
         isLoaded: true,
       }));
     }
@@ -71,6 +81,7 @@ export default function Account() {
             aria-label="Username"
             aria-describedby="addon-wrapping"
           />
+          <ERROR error={error?.inputError?.username} />
         </div>
         <div className="edit_inputs">
           <label htmlFor="edit_email">Email</label>
@@ -84,17 +95,18 @@ export default function Account() {
             onChange={handleChange}
             aria-describedby="addon-wrapping"
           />
+          <ERROR error={error?.inputError?.email} />
         </div>
 
         {UPDATED_FIELDS(input, user).hasOwnProperty("email") ? (
           <Info info="A verification code will be sent to this email address." />
         ) : (
-          <ERROR error={view.error} />
+          <ERROR error={error?.otherError} />
         )}
 
         {Object.keys(UPDATED_FIELDS(input, user)).length !== 0 ? (
           <div className="save_edit_button">
-            {!view.isLoaded ? (
+            {!isLoaded ? (
               <Ellipsis />
             ) : (
               <input

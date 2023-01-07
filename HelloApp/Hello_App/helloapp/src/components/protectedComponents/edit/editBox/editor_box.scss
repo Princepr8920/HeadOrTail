@@ -1,7 +1,6 @@
-
-#editor_box_container{
- // border: 2px solid red; 
- position: relative;
+#editor_box_container {
+  // border: 2px solid red;
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
@@ -9,21 +8,26 @@
   align-items: center; 
 }
 
-.editor_Box { 
+.editor_Box {
   position: absolute;
-  width: 35%; 
-  min-height: 30%; 
+  width: 35%;
+  min-height: 30%;
   max-width: 40%;
   top: 10%;
-  height: auto;
+  max-height: 80%;
   border-radius: 10px;
-  transition: 1s ease; 
-  animation: slow 0.2s ease 0s ;
+  transition: 1s ease;
+  animation: slow 0.2s ease 0s;
+  overflow-y:auto;
+  scrollbar-width: none;
 }
- 
+
+.editor_Box::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
 
 
-.editor_Box h3{
+.editor_Box h3 {
   font-weight: 600;
 }
 
@@ -31,22 +35,22 @@
 
 .save_edit_button {
   // border: 2px solid red;
-  width: 100%; 
+  width: 100%;
   position: relative;
-  top: 92%; 
- animation: slow 0.5s linear 0s 1;
+  top: 92%;
+  animation: slow 0.5s linear 0s 1;
   input {
     width: 100%;
-    font-weight: 800; 
+    font-weight: 800;
   }
 }
 
 @keyframes slow {
-  0%{
-    opacity:0;
+  0% {
+    opacity: 0;
   }
-  100%{
-    opacity:0.9;
+  100% {
+    opacity: 0.9;
   }
 }
 
@@ -56,8 +60,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding:10px 10px;
-  color:inherit;
+  padding: 10px 10px;
+  color: inherit;
 }
 
 .editor_Box input {
@@ -66,10 +70,10 @@
 
 .edit_inputs {
   color: inherit;
- // border: 0.5px solid rgb(33, 27, 27);
+  //  border: 0.5px solid rgb(33, 27, 27);
   width: 100%;
-  margin: 8px;
-  padding:0px 5px;
+  margin: 2px;
+  padding: 0px 5px;
   label {
     font-family: monospace;
     margin-bottom: -8px;
@@ -81,18 +85,13 @@
     color: inherit;
     padding: 5px;
     width: 100%;
-    margin:5px 0px;
+    margin: 5px 0px;
     border-radius: 5px;
     border: 0.5px solid rgb(33, 27, 27);
     resize: none;
-   
   }
-input:focus,
-  textarea:focus { 
+  input:focus,
+  textarea:focus {
     box-shadow: 0px 0px 3px 3px rgba(255, 255, 255, 0.716);
   }
-
 }
-
-
-  

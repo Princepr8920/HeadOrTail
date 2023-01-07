@@ -3,8 +3,9 @@ import "./edit.scss";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/usefulHooks/useAuth";
 import useTheme from "../../../hooks/usefulHooks/useTheme";
-import Editor_Box from "./editBox/editor_box"
-import useView from "../../../hooks/usefulHooks/useView";  
+import Editor_Box from "./editBox/editor_box";
+import useView from "../../../hooks/usefulHooks/useView";
+import Header from "../reuseableComponents/header";
 
 export default function EDIT() {
   const { setView } = useView();
@@ -14,7 +15,6 @@ export default function EDIT() {
     },
   } = useTheme();
 
- 
   let {
     auth: {
       user: {
@@ -59,6 +59,7 @@ export default function EDIT() {
           edit_operation: { success: false, message: "" },
           verification: { isVerified: true, message: "" },
           waiting: false,
+          error:{inputError:null,otherError:null}
         }));
       }
     }
@@ -66,17 +67,11 @@ export default function EDIT() {
 
   return (
     <>
-     <section
+      <section
         className={`edit_Section ${getItem.isEditable ? `edit_Enabled` : ""}`}
       >
-        <div className={`${components_background} edit_header`}>
-          <div className="back">
-            <Link className="backButton" to="/" replace>
-              <i className="fa fa-arrow-left" aria-hidden="true"></i>
-            </Link>
-          </div>
-          <h3> My Account</h3>
-        </div>
+        <Header name={"My Account"} link={true} />
+
         <div id="edit_container">
           <div className="grid_1">
             <div
@@ -86,7 +81,11 @@ export default function EDIT() {
             >
               <div className="edit_profile_img_div">
                 <label htmlFor="file-input">
-                  <img className="edit_profile_img" src={picture} alt="user_dp" />
+                  <img
+                    className="edit_profile_img"
+                    src={picture}
+                    alt="user_dp"
+                  />
                   <div className="overlay">
                     <i className="fa fa-camera" aria-hidden="true"></i>
                     <span>Change Profile Picture</span>
@@ -245,7 +244,7 @@ export default function EDIT() {
         </div>
       ) : (
         ""
-      )} 
+      )}
     </>
   );
 }

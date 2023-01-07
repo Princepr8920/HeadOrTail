@@ -4,13 +4,16 @@ import useEditRequest from "../../../../../hooks/componentHooks/editorHooks/edit
 import useAuth from "../../../../../hooks/usefulHooks/useAuth";
 import useUpdate from "../../../../../hooks/usefulHooks/useUpdate";
 import useView from "../../../../../hooks/usefulHooks/useView";
-import ERROR from "../../../../reuseableComponents/informativeComponents/ERROR";
-import Ellipsis from "../../../../reuseableComponents/loadingComponents/ellipsis";
+import ERROR from "../../../../usefulComponents/informativeComponents/ERROR";
+import Ellipsis from "../../../../usefulComponents/loadingComponents/ellipsis";
 
 export default function Security() {
   const SUBMIT_DATA = useEditRequest();
   const UPDATED_FIELDS = useUpdate();
-  const { setView } = useView();
+  const {
+    setView,
+    view: { error, isLoaded },
+  } = useView();
   const {
     auth: { user },
   } = useAuth();
@@ -53,7 +56,7 @@ export default function Security() {
     e.preventDefault();
     const { name, value } = e.target;
     setInput((rest) => ({ ...rest, [name]: value }));
-    setView((rest) => ({ ...rest, error: null }));
+    setView((rest) => ({ ...rest, error: { inputError: null, otherError: null } }));
   }
 
   function trackChanges(changes) {
@@ -69,11 +72,9 @@ export default function Security() {
   async function handleSubmit(e) {
     e.preventDefault();
     setView((rest) => ({ ...rest, isLoaded: false }));
-    const { message, status, success } = await SUBMIT_DATA({
-      userID: user.userID,
-      update: isUpdated,
-    });
+    const { data, status } = await SUBMIT_DATA(isUpdated);
     if (status === 200) {
+      const { success, message } = data;
       setView((rest) => ({
         ...rest,
         edit_operation: { success, message },
@@ -82,7 +83,11 @@ export default function Security() {
     } else {
       setView((rest) => ({
         ...rest,
-        error: { status, message },
+        error: {
+          inputError: data?.inputError,
+          otherError:
+            status !== 400 ? { message: data?.message, status } : null,
+        },
         isLoaded: true,
       }));
     }
@@ -92,7 +97,7 @@ export default function Security() {
   const showPassword = item.showPassword ? ["ON", "text"] : ["OFF", "password"];
   const setCollapsed = item.isCollapsed
     ? ["item_collapsed", "fa-solid fa-angle-down"]
-    : ["item_expended", "fa-solid fa-angle-up"]; 
+    : ["item_expended", "fa-solid fa-angle-up"];
 
   return (
     <>
@@ -122,6 +127,7 @@ export default function Security() {
                 aria-label="Username"
                 aria-describedby="addon-wrapping"
               />
+              <ERROR error={error?.inputError?.current_password} />
             </div>
             <div className="edit_inputs">
               <label htmlFor="new_password">New Password</label>
@@ -135,6 +141,7 @@ export default function Security() {
                 onChange={handleChange}
                 aria-describedby="addon-wrapping"
               />
+              <ERROR error={error?.inputError?.new_password} />
             </div>
 
             <div className="edit_inputs">
@@ -149,6 +156,7 @@ export default function Security() {
                 onChange={handleChange}
                 aria-describedby="addon-wrapping"
               />
+              <ERROR error={error?.inputError?.confirm_password} />
             </div>
             <div id="show_password">
               <span onClick={password_visibility} id="show_pwd-btn">
@@ -198,12 +206,12 @@ export default function Security() {
           </ul>
         </div>
 
-        <ERROR error={item.error} />
+        <ERROR error={error?.otherError} />
 
         {Object.keys({ ...isUpdated.security, ...trackChanges(input) })
           .length !== 0 ? (
           <div className="save_edit_button">
-            {!item.isLoaded ? (
+            {!isLoaded ? (
               <Ellipsis />
             ) : (
               <input
