@@ -6,21 +6,25 @@
   position: relative;
   padding: 20px;
    border: 2px solid transparent; 
+   display: flex;  // temp
+   justify-content: center;  // temp
 }
 
 .skill_info_container {
   h1 {
-    text-align: right;
+    text-align: center;
     font-size: 3.5em;
-    margin-left: 15px;
+   // margin-left: 15px;    // temp
     position: relative;
-    top: 5%;
+    top: 3%;
     background: rgba(217, 210, 210, 0.66);
     border-radius: 20px;
     padding: 0px 10px;
   }
-  //border: 2px solid rgb(70, 10, 210);
-  margin-top: 3%;
+ //  border: 2px solid rgb(70, 10, 210);
+  margin-top: 3%; 
+  
+   width: 75%;
 }
 
 #skill {
@@ -28,18 +32,22 @@
   flex-direction: column;
   position: relative;
   top: 5%;
- // border: 2px solid rgb(18, 153, 88);
+ //  border: 2px solid rgb(18, 153, 88);
 }
 
 #frontend,
 #backend {
- // border: 2px solid rgb(234, 86, 12);
+  border: 2px solid rgb(66, 64, 64);
+  box-shadow: 0px 0px 2px 2px rgb(71, 70, 70);
+   border-radius: 20px;
   margin: 0px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
   .info {
-    width: 60%;
+    width: 70%;
     padding: 5px;
     h2 {
       font-size: 1.5rem;
@@ -52,7 +60,7 @@
 }
 
 .lang {
-  width: 50%;
+  width: 65%;   // temp width 50%
  // border: 2px solid rgb(42, 6, 224);
 }
 
@@ -67,14 +75,14 @@
  // border: 2px solid rgb(6, 224, 224);
   li {
     div {
-      //border: 2px solid rgb(42, 6, 224);
+    //  border: 2px solid rgb(42, 6, 224);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
 
-    margin: 5px 10px;
+    margin: 15px 15px;
     text-align: center;
     cursor: pointer;
     width: 80px;
@@ -84,16 +92,22 @@
   }
 
   .group:hover .lang_icon {
-    width: 65px;
-    height: 65px;
+    width: 75px;
+    height: 75px;
   }
 }
 
 .lang_icon {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   transition: 0.3s ease;
 }
+
+
+
+
+
+
 
 @media screen and (max-width: 800px) {
   #skills {
@@ -102,11 +116,11 @@
   .skill_info_container {
     position: relative;
     top: 10px;
-    width: 100%;
+    width: 85%;
     h1 {
       font-size: 2em;
       margin: 0px;
-      border-radius: 0px;
+      border-radius: 20px;;
     }
 
     #skill {
@@ -140,16 +154,44 @@
         height: 80px;
       }
       .group:hover .lang_icon {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
       }
     }
 
     .lang_icon {
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
     }
   }
+
+
+  #frontend,
+  #backend {
+    border: 2px solid rgb(66, 64, 64);
+    box-shadow: 0px 0px 2px 2px rgb(71, 70, 70);
+    border-radius: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    .info {
+      width: 70%;
+      padding: 5px;
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+    p {
+      font-size: 1.3rem;
+      font-family: monospace;
+    }
+  }
+
+
+
 }
 
 @media screen and (max-width: 550px) {
@@ -161,3 +203,215 @@
     }
   }
 }
+
+
+// @media screen and (max-width: 800px) {
+//   .skill_info_container {
+//     h1 {
+//       text-align: center;
+//       font-size: 3.5em;
+//      // margin-left: 15px;    // temp
+//       position: relative;
+//       top: 3%;
+//       background: rgba(217, 210, 210, 0.66);
+//       border-radius: 20px;
+//       padding: 0px 10px;
+//     }
+//     border: 2px solid rgb(70, 10, 210);
+//     margin-top: 3%; 
+    
+//      width: 75%;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// old code
+
+
+
+
+
+
+
+
+// #skills {
+//   user-select: none;
+//   width: 100%;
+//   height: 100%;
+//   min-height: 100vh;
+//   position: relative;
+//   padding: 20px;
+//    border: 2px solid transparent; 
+// }
+
+// .skill_info_container {
+//   h1 {
+//     text-align: right;
+//     font-size: 3.5em;
+//     margin-left: 15px;
+//     position: relative;
+//     top: 5%;
+//     background: rgba(217, 210, 210, 0.66);
+//     border-radius: 20px;
+//     padding: 0px 10px;
+//   }
+//   //border: 2px solid rgb(70, 10, 210);
+//   margin-top: 3%;
+// }
+
+// #skill {
+//   display: flex;
+//   flex-direction: column;
+//   position: relative;
+//   top: 5%;
+//  // border: 2px solid rgb(18, 153, 88);
+// }
+
+// #frontend,
+// #backend {
+//  // border: 2px solid rgb(234, 86, 12);
+//   margin: 0px;
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 5px;
+//   .info {
+//     width: 60%;
+//     padding: 5px;
+//     h2 {
+//       font-size: 1.5rem;
+//     }
+//   }
+//   p {
+//     font-size: 1.3rem;
+//     font-family: monospace;
+//   }
+// }
+
+// .lang {
+//   width: 50%;
+//  // border: 2px solid rgb(42, 6, 224);
+// }
+
+// .lang_ul {
+//   padding: 0px;
+//   margin: 0px;
+//   display: flex;
+//   justify-content: space-evenly;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   height: 100%;
+//  // border: 2px solid rgb(6, 224, 224);
+//   li {
+//     div {
+//       //border: 2px solid rgb(42, 6, 224);
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: center;
+//     }
+
+//     margin: 5px 10px;
+//     text-align: center;
+//     cursor: pointer;
+//     width: 80px;
+//     height: 100px;
+//     list-style: none;
+//     font-size: 1em;
+//   }
+
+//   .group:hover .lang_icon {
+//     width: 65px;
+//     height: 65px;
+//   }
+// }
+
+// .lang_icon {
+//   width: 60px;
+//   height: 60px;
+//   transition: 0.3s ease;
+// }
+
+// @media screen and (max-width: 800px) {
+//   #skills {
+//     padding: 0px;
+//   }
+//   .skill_info_container {
+//     position: relative;
+//     top: 10px;
+//     width: 100%;
+//     h1 {
+//       font-size: 2em;
+//       margin: 0px;
+//       border-radius: 0px;
+//     }
+
+//     #skill {
+//       top: 2%;
+//     }
+
+//     #frontend,
+//     #backend {
+//       h2 {
+//         font-size: 1.4em;
+//       }
+//       display: flex;
+//       flex-direction: column;
+//       .info {
+//         width: 100%;
+//         margin-top: -5px;
+//       }
+//       p {
+//         margin-top: 0px;
+//         font-size: 1.2rem;
+//         line-height: 25px;
+//       }
+//     }
+
+//     .lang {
+//       width: 100%;
+//     }
+
+//     .lang_ul {
+//       li {
+//         height: 80px;
+//       }
+//       .group:hover .lang_icon {
+//         width: 60px;
+//         height: 60px;
+//       }
+//     }
+
+//     .lang_icon {
+//       width: 50px;
+//       height: 50px;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 550px) {
+//   .skill_info_container {
+//     h1 {
+//       width: 100%;
+//       font-size: 1.8em;
+//       top: 3%;
+//     }
+//   }
+// }

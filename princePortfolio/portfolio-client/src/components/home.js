@@ -5,7 +5,7 @@ export default function Home() {
       <section id="intro">
         <div id="name_intro">
           <h1 id="name">Hey I am Prince</h1>
-          <span>a web developer</span>
+          <span>a front-end developer</span>
         </div>
       </section>
   );

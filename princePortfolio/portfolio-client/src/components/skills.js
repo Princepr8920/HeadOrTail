@@ -14,56 +14,54 @@ export default function Skills() {
     { name: "D3", icon: "d3.png" },
   ];
 
-  const backend = [
-    { name: "Node.js", icon: "node.png" },
-    { name: "Express", icon: "express.png" },
-    { name: "Json", icon: "json.png" },
-    { name: "Passport", icon: "passport.png" },
-    { name: "Mocha", icon: "mocha.png" },
-    { name: "Chai", icon: "chai.png" },
-    { name: "Mongoose", icon: "mongoose.png" },
-    { name: "MongoDb", icon: "mongodb.png" },
-  ];
+  // const backend = [
+  //   { name: "Node.js", icon: "node.png" },
+  //   { name: "Express", icon: "express.png" },
+  //   { name: "Json", icon: "json.png" },
+  //   { name: "Passport", icon: "passport.png" },
+  //   { name: "Mocha", icon: "mocha.png" },
+  //   { name: "Chai", icon: "chai.png" },
+  //   { name: "Mongoose", icon: "mongoose.png" },
+  //   { name: "MongoDb", icon: "mongodb.png" },
+  // ];
   return (
-    <>
-      <section id="skills" className="reveal">
-        <div className="skill_info_container">
-          <h1>About my skills</h1>
+    <section id="skills" className="reveal">
+      <div className="skill_info_container">
+        <h1>About my skills</h1>
 
-          <div id="skill">
-            <div id="frontend">
-              <div className="info">
-                <h2>Frontend</h2>
-                <p>
-                  Front-end is an integral part of web development. To develop
-                  front-end there are lot of languages frameworks
-                  and libraries are available. As a frontend developer i use
-                  different types of languages, frameworks and libraries to
-                  maxmize my productivity.
-                </p>
-              </div>
-
-              <div className="lang">
-                <ul className="lang_ul">
-                  {frontend.map((skill, index) => {
-                    return (
-                      <li key={index}>
-                        <div className="group">
-                          <img
-                            className="lang_icon"
-                            src={require(`../assets/pngIcons/${skill.icon}`)}
-                            alt={skill.name}
-                          />
-                          <span>{skill.name}</span>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+        <div id="skill">
+          <div id="frontend">
+            <div className="info">
+              {/* <h2>Frontend</h2> */}
+              <p>
+                Front-end is an integral part of development. To develop
+                front-end there are lot of languages frameworks and libraries
+                are available. As a frontend developer i use different types of
+                languages or technologies to maxmize my productivity.
+              </p>
             </div>
 
-            <div id="backend">
+            <div className="lang">
+              <ul className="lang_ul">
+                {frontend.map((skill, index) => {
+                  return (
+                    <li key={index}>
+                      <div className="group">
+                        <img
+                          className="lang_icon"
+                          src={require(`../assets/pngIcons/${skill.icon}`)}
+                          alt={skill.name}
+                        />
+                        <span>{skill.name}</span>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+
+          {/* <div id="backend">
               <div className="info">
                 <h2>Backend</h2>
                 <p>
@@ -91,11 +89,10 @@ export default function Skills() {
                     );
                   })}
                 </ul>
-              </div>
-            </div>
-          </div>
+              </div> */}
+          {/* </div> */}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

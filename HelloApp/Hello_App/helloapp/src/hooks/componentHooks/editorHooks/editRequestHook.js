@@ -5,6 +5,7 @@ export default function useSecurityEdit() {
   const PATCH = usePatchHook();
   const { setAuth } = useAuth();
   async function SUBMIT_DATA(info) {
+    console.log(info)
     let url = "user/profile/edit";
     const { data, status } = await PATCH(info, url);
     if (status === 200) {
